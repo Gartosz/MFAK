@@ -36,7 +36,7 @@ void ofApp::draw(){
 		changeDirection(parameters[i], windowSize);
 		parameters[i].pos += parameters[i].velocity * speed_slider;
 		ofSetColor(ofColor(parameters[i].color[0], parameters[i].color[1], parameters[i].color[2]));
-		ofDrawCircle(parameters[i].pos[0], parameters[i].pos[1], parameters[i].size);
+		ofDrawCircle(parameters[i].pos, parameters[i].size);
 	}
 	gui.draw();
 }
