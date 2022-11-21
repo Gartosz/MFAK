@@ -46,7 +46,7 @@ class ofApp : public ofBaseApp{
 			int size = 1;
 			ofVec2f pos = { 0, 0 };
 			ofColor color = { 0, 0, 0 };
-			int mass = 0;
+			float mass = 0;
 			ofVec2f velocity =  { 1, 1 };
 			ofVec2f acceleration = { 1, 1 };
 
