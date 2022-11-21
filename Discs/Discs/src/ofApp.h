@@ -44,11 +44,11 @@ class ofApp : public ofBaseApp{
 		struct disk_parameters
 		{
 			int size = 1;
-			ofVec2f pos = { 0,0 };
-			ofColor color = {0, 0, 0};
+			ofVec2f pos = { 0, 0 };
+			ofColor color = { 0, 0, 0 };
 			int mass = 0;
-			ofVec2f velocity = {1, 1};
-			int acceleration[2] = { 1, 1 };
+			ofVec2f velocity =  { 1, 1 };
+			ofVec2f acceleration = { 1, 1 };
 
 			disk_parameters()
 			{
