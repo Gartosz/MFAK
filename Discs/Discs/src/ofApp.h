@@ -61,6 +61,8 @@ class ofApp : public ofBaseApp{
 				mass = ofRandom(0.1, 5.0);
 				velocity[0] = ofRandom(-3.0, 3.0);
 				velocity[1] = ofRandom(-3.0, 3.0);
+				acceleration[0] = ofRandom(-1.0, 1.0);
+				acceleration[1] = ofRandom(-1.0, 1.0);
 			}
 		};
 		std::vector<disk_parameters> parameters;
