@@ -39,6 +39,9 @@ class ofApp : public ofBaseApp{
 			{
 				parameters.push_back(disk_parameters());
 			}
+			force_point_color.set(255, 255, 255);
+			force_point.set(ofGetWidth() / 2, ofGetHeight() / 2);
+			force_point_size = 20;
 		}
 
 	private:
@@ -67,6 +70,9 @@ class ofApp : public ofBaseApp{
 				acceleration[1] = ofRandom(-0.5, 0.5);
 			}
 		};
+		int force_point_size;
+		ofColor force_point_color;
+		ofVec2f force_point;
 		std::vector<disk_parameters> parameters;
 
 		void wallHit(disk_parameters& parameter, float const* windowSize);
