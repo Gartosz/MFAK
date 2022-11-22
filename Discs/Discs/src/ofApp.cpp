@@ -21,7 +21,7 @@ void ofApp::update() {
 		ofVec2f distance_vector(force_point - parameters[i].pos);
 		ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
 		parameters[i].acceleration += force / parameters[i].mass;
-}
+	}
 }
 
 void ofApp::wallHit(disk_parameters& parameter, float const* windowSize)
@@ -32,27 +32,19 @@ void ofApp::wallHit(disk_parameters& parameter, float const* windowSize)
 		{
 			parameter.pos[i] = windowSize[i] - parameter.size;
 			parameter.velocity[i] *= -0.8;
-}
+		}
 		else if (parameter.pos[i] <= parameter.size)
-void ofApp::changeDirection(disk_parameters& parameter, float const *windowSize)
-{
+		{
 			parameter.pos[i] = parameter.size;
 			parameter.velocity[i] *= -0.8;
-
-	if (exceedsBorder(parameter.pos[1], parameter.size, windowSize[1]))
-		parameter.velocity[1] *= -1;
-}
+		}
 	}
 }
 
-
 //--------------------------------------------------------------
 void ofApp::draw() {
-	float windowSize[2] = {ofGetWidth(), ofGetHeight()};
 	for (int i = 0; i < number; ++i)
 	{
-		changeDirection(parameters[i], windowSize);
-		parameters[i].pos += parameters[i].velocity * speed_slider;
 		ofSetColor(parameters[i].color);
 		ofDrawCircle(parameters[i].pos, parameters[i].size);
 	}
