@@ -5,7 +5,7 @@ void ofApp::setup() {
 	gui.setup();
 	gui.add(speed_slider.setup("Modify speed", 1.00, 0.00, 2.00));
 	gui.add(gravity_slider.setup("Modify gravity", 0.0, 0.0, 20.0));
-	gui.add(mass_slider.setup("Modify mass", 0.0, 0.0, 300.0));
+	gui.add(mass_slider.setup("Modify mass", 0.0, 0.0, 500.0));
 }
 
 //--------------------------------------------------------------
