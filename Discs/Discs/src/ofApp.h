@@ -40,8 +40,8 @@ class ofApp : public ofBaseApp{
 				parameters.push_back(disk_parameters());
 			}
 			force_point_color.set(255, 255, 255);
-			force_point.set(ofGetWidth() / 2, ofGetHeight() / 2);
 			force_point_size = 20;
+			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
 		}
 
 	private:
@@ -72,8 +72,8 @@ class ofApp : public ofBaseApp{
 		};
 		int force_point_size;
 		ofColor force_point_color;
-		ofVec2f force_point;
 		std::vector<disk_parameters> parameters;
+		std::vector<ofVec2f> force_points;
 
 		void wallHit(disk_parameters& parameter, float const* windowSize);
 };

@@ -16,10 +16,13 @@ void ofApp::update() {
 		parameters[i].pos += parameters[i].velocity * speed_slider;
 		parameters[i].velocity += parameters[i].acceleration * speed_slider;
 		wallHit(parameters[i], windowSize);
-		float distance = force_point.distance(parameters[i].pos);
-		ofVec2f distance_vector(force_point - parameters[i].pos);
-		ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
-		parameters[i].acceleration += force / parameters[i].mass;
+		for (auto& force_point : force_points) 
+		{
+			float distance = force_point.distance(parameters[i].pos);
+			ofVec2f distance_vector(force_point - parameters[i].pos);
+			ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
+			parameters[i].acceleration += force / parameters[i].mass;
+		}
 	}
 }
 
@@ -48,7 +51,8 @@ void ofApp::draw() {
 		ofDrawCircle(parameters[i].pos, parameters[i].size);
 	}
 	ofSetColor(force_point_color);
-	ofDrawCircle(force_point, force_point_size);
+	for (auto& force_point : force_points)
+		ofDrawCircle(force_point, force_point_size);
 	gui.draw();
 }
 
