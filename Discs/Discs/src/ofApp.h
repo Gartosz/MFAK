@@ -25,12 +25,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		ofxPanel gui;
-
-		ofxFloatSlider speed_slider;
-		ofxFloatSlider gravity_slider;
-		ofxFloatSlider mass_slider;
-
 		ofApp(int n = 1000)
 		{
 			ofSetCircleResolution(100);
@@ -70,9 +64,16 @@ class ofApp : public ofBaseApp{
 				acceleration[1] = ofRandom(-0.5, 0.5);
 			}
 		};
-		int force_point_size;
+		ofxPanel gui;
+
+		ofxFloatSlider speed_slider;
+		ofxFloatSlider gravity_slider;
+		ofxFloatSlider mass_slider;
 		ofxFloatSlider viscosity;
+
+		int force_point_size;
 		ofColor force_point_color;
+
 		std::vector<disk_parameters> parameters;
 		std::vector<ofVec2f> force_points;
 
