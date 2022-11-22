@@ -54,9 +54,9 @@ class ofApp : public ofBaseApp{
 				size = std::rand() % 20 + 5;
 				pos[0] = std::rand() % (ofGetWidth() - size * 2);
 				pos[1] = std::rand() % (ofGetHeight() - size * 2);
-				color[0] = ofRandom(0, 255);
-				color[1] = ofRandom(0, 255);
-				color[2] = ofRandom(0, 255);
+				color[0] = ofRandom(0, 240);
+				color[1] = ofRandom(0, 240);
+				color[2] = ofRandom(0, 240);
 				mass = ofRandom(50.0, 150.0);
 				velocity[0] = ofRandom(-3.0, 3.0);
 				velocity[1] = ofRandom(-3.0, 3.0);
