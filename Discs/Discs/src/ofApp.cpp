@@ -16,26 +16,33 @@ void ofApp::update() {
 	{
 		parameters[i].pos += parameters[i].velocity * speed_slider;
 		parameters[i].velocity += parameters[i].acceleration * speed_slider;
+		wallHit(parameters[i], windowSize);
 		float distance = force_point.distance(parameters[i].pos);
 		ofVec2f distance_vector(force_point - parameters[i].pos);
 		ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
 		parameters[i].acceleration += force / parameters[i].mass;
 }
-
-bool ofApp::exceedsBorder(float const &position, float const &size, float const &borderSize)
-{
-	if (position + size >= borderSize || position - size <= 0)
-		return true;
-	return false;
 }
 
+void ofApp::wallHit(disk_parameters& parameter, float const* windowSize)
+{
+	for (int i = 0; i < 2; ++i)
+	{
+		if (parameter.pos[i] >= windowSize[i] - parameter.size)
+		{
+			parameter.pos[i] = windowSize[i] - parameter.size;
+			parameter.velocity[i] *= -0.8;
+}
+		else if (parameter.pos[i] <= parameter.size)
 void ofApp::changeDirection(disk_parameters& parameter, float const *windowSize)
 {
-	if (exceedsBorder(parameter.pos[0], parameter.size, windowSize[0]))
-		parameter.velocity[0] *= -1;
+			parameter.pos[i] = parameter.size;
+			parameter.velocity[i] *= -0.8;
 
 	if (exceedsBorder(parameter.pos[1], parameter.size, windowSize[1]))
 		parameter.velocity[1] *= -1;
+}
+	}
 }
 
 

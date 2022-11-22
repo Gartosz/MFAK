@@ -69,6 +69,6 @@ class ofApp : public ofBaseApp{
 		};
 		std::vector<disk_parameters> parameters;
 
-		bool exceedsBorder(float const& position, float const& size, float const& borderSize);
+		void wallHit(disk_parameters& parameter, float const* windowSize);
 		void changeDirection(disk_parameters& parameter, float const* windowSize);
 };
