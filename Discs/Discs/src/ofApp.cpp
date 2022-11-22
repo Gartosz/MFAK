@@ -78,7 +78,7 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-	std::cout << x << " " << y << "\n";
+	force_points.push_back(ofVec2f(x, y));
 }
 
 //--------------------------------------------------------------
