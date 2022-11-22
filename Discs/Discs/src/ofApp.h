@@ -42,6 +42,7 @@ class ofApp : public ofBaseApp{
 			force_point_color.set(255, 255, 255);
 			force_point_size = 20;
 			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
+			viscosity = 0.0000181;
 		}
 
 	private:
@@ -63,7 +64,7 @@ class ofApp : public ofBaseApp{
 				color[0] = ofRandom(0, 255);
 				color[1] = ofRandom(0, 255);
 				color[2] = ofRandom(0, 255);
-				mass = ofRandom(90.0, 100.0);
+				mass = ofRandom(50.0, 150.0);
 				velocity[0] = ofRandom(-3.0, 3.0);
 				velocity[1] = ofRandom(-3.0, 3.0);
 				acceleration[0] = ofRandom(-0.5, 0.5);
@@ -71,6 +72,7 @@ class ofApp : public ofBaseApp{
 			}
 		};
 		int force_point_size;
+		double viscosity;
 		ofColor force_point_color;
 		std::vector<disk_parameters> parameters;
 		std::vector<ofVec2f> force_points;

@@ -11,18 +11,20 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update() {
 	float windowSize[2] = { ofGetWidth(), ofGetHeight() };
-	for (int i = 0; i < number; ++i)
+	for (auto& disk : parameters)
 	{
-		parameters[i].pos += parameters[i].velocity * speed_slider;
-		parameters[i].velocity += parameters[i].acceleration * speed_slider;
-		wallHit(parameters[i], windowSize);
+		disk.pos += disk.velocity * speed_slider;
+		disk.velocity += disk.acceleration * speed_slider;
+		wallHit(disk, windowSize);
 		for (auto& force_point : force_points) 
 		{
-			float distance = force_point.distance(parameters[i].pos);
-			ofVec2f distance_vector(force_point - parameters[i].pos);
-			ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
-			parameters[i].acceleration += force / parameters[i].mass;
+			float distance = force_point.distance(disk.pos);
+			ofVec2f distance_vector(force_point - disk.pos);
+			ofVec2f force = (gravity_slider * mass_slider * disk.mass * distance_vector) / pow(distance, 3);
+			disk.acceleration += force / disk.mass;
 		}
+		ofVec2f drag_force = -6*PI*disk.velocity*viscosity*disk.size;
+		disk.acceleration += drag_force;
 	}
 }
 
