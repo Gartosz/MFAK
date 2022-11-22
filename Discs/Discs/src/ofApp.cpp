@@ -9,8 +9,17 @@ void ofApp::setup() {
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-
+void ofApp::update() {
+	float windowSize[2] = { ofGetWidth(), ofGetHeight() };
+	ofVec2f force_point(ofGetWidth() / 2, ofGetHeight() / 2);
+	for (int i = 0; i < number; ++i)
+	{
+		parameters[i].pos += parameters[i].velocity * speed_slider;
+		parameters[i].velocity += parameters[i].acceleration * speed_slider;
+		float distance = force_point.distance(parameters[i].pos);
+		ofVec2f distance_vector(force_point - parameters[i].pos);
+		ofVec2f force = (gravity_slider * mass_slider * parameters[i].mass * distance_vector) / pow(distance, 3);
+		parameters[i].acceleration += force / parameters[i].mass;
 }
 
 bool ofApp::exceedsBorder(float const &position, float const &size, float const &borderSize)
@@ -31,7 +40,7 @@ void ofApp::changeDirection(disk_parameters& parameter, float const *windowSize)
 
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
 	float windowSize[2] = {ofGetWidth(), ofGetHeight()};
 	for (int i = 0; i < number; ++i)
 	{
