@@ -42,7 +42,6 @@ class ofApp : public ofBaseApp{
 			force_point_color.set(255, 255, 255);
 			force_point_size = 20;
 			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
-			viscosity = 0.0000181;
 		}
 
 	private:
@@ -72,7 +71,7 @@ class ofApp : public ofBaseApp{
 			}
 		};
 		int force_point_size;
-		double viscosity;
+		ofxFloatSlider viscosity;
 		ofColor force_point_color;
 		std::vector<disk_parameters> parameters;
 		std::vector<ofVec2f> force_points;
