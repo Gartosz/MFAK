@@ -47,6 +47,8 @@ void ofApp::draw() {
 		ofSetColor(parameters[i].color);
 		ofDrawCircle(parameters[i].pos, parameters[i].size);
 	}
+	ofSetColor(force_point_color);
+	ofDrawCircle(force_point, force_point_size);
 	gui.draw();
 }
 
