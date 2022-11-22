@@ -28,6 +28,8 @@ class ofApp : public ofBaseApp{
 		ofxPanel gui;
 
 		ofxFloatSlider speed_slider;
+		ofxFloatSlider gravity_slider;
+		ofxFloatSlider mass_slider;
 
 		ofApp(int n = 1000)
 		{
