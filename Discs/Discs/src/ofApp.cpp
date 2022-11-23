@@ -60,8 +60,8 @@ void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 void ofApp::draw() {
 	for (int i = 0; i < number; ++i)
 	{
-		ofSetColor(parameters[i].color);
-		ofDrawCircle(parameters[i].pos, parameters[i].size);
+		ofSetColor(disk.color);
+		ofDrawCircle(disk.pos, disk.size);
 	}
 	ofSetColor(force_point_color);
 	for (auto& force_point : force_points)
