@@ -17,10 +17,13 @@ void ofApp::update() {
 	float windowSize[2] = { ofGetWidth(), ofGetHeight() };
 	for (auto& disk : parameters)
 		ofVec2f acceleration(0, 0);
+		if (apply_viscosity)
 	{
 			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
 			acceleration += drag_force / disk.mass;
-		wallHit(disk, windowSize);
+		}
+		if (apply_attractor)
+		{
 		for (auto& force_point : force_points) 
 		{
 			float distance = force_point.distance(disk.pos);
@@ -28,7 +31,7 @@ void ofApp::update() {
 				ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, 3 / 2);
 				acceleration += force / disk.mass;
 		}
-		ofVec2f drag_force = -6*PI*disk.velocity*viscosity*disk.size;
+		}
 		disk.velocity += acceleration * delta_time;
 		disk.pos += disk.velocity * delta_time;
 		checkWallHit(disk, windowSize);
