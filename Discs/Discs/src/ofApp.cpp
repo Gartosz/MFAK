@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 	gui.setup();
-	gui.add(speed_slider.setup("Modify speed", 1.00, 0.00, 2.00));
+	gui.setSize(250, 120);
 	gui.add(delta_time.setup("Speed", 1.00, 0.00, 2.00));
 	gui.add(gravity.setup("Gravity", 9.81, 0.0, 20.0));
 	gui.add(attractor_mass.setup("Mass", 10.0, 0.0, 300.0));
