@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 			number = n;
 			for (int i = 0; i < n; i++)
 			{
-				parameters.push_back(disk_parameters());
+				disks.push_back(disk_parameters());
 			}
 			force_point_color.set(255, 255, 255);
 			force_point_size = 20;
@@ -74,7 +74,7 @@ class ofApp : public ofBaseApp{
 		int force_point_size;
 		ofColor force_point_color;
 
-		std::vector<disk_parameters> parameters;
+		std::vector<disk_parameters> disks;
 		std::vector<ofVec2f> force_points;
 
 		void wallHit(disk_parameters& parameter, float const* windowSize);
