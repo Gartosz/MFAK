@@ -35,7 +35,7 @@ class ofApp : public ofBaseApp{
 
 			disk_parameters()
 			{
-				size = std::rand() % 20 + 5;
+				size = std::rand() % 15 + 5;
 				pos[0] = std::rand() % (ofGetWidth() - size * 2);
 				pos[1] = std::rand() % (ofGetHeight() - size * 2);
 				color[0] = ofRandom(0, 240);
