@@ -13,29 +13,29 @@ void ofApp::setup() {
 }
 
 void ofApp::applyDragForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration)
-		{
-			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
-			acceleration += drag_force / disk.mass;
-		}
+{
+	ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
+	acceleration += drag_force / disk.mass;
+}
 
 
 void ofApp::applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration)
-		{
-			for (auto& force_point : force_points)
-			{
-				float distance = force_point.distance(disk.pos);
-				ofVec2f distance_vector(force_point - disk.pos);
-				ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, float(3 / 2));
-				acceleration += force / disk.mass;
-			}
-		}
+{
+	for (auto& force_point : force_points)
+	{
+		float distance = force_point.distance(disk.pos);
+		ofVec2f distance_vector(force_point - disk.pos);
+		ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, float(3 / 2));
+		acceleration += force / disk.mass;
+	}
+}
 
 void ofApp::moveDisk(ofApp::disk_parameters& disk, ofVec2f const &acceleration, float const *windowSize)
 {
-		disk.velocity += acceleration * delta_time;
-		disk.pos += disk.velocity * delta_time;
-		checkWallHit(disk, windowSize);
-	}
+	disk.velocity += acceleration * delta_time;
+	disk.pos += disk.velocity * delta_time;
+	checkWallHit(disk, windowSize);
+}
 
 void ofApp::update() {
 	const float windowSize[2] = { ofGetWidth(), ofGetHeight() };
@@ -85,7 +85,6 @@ void ofApp::drawAttractors()
 	}
 }
 
-//--------------------------------------------------------------
 void ofApp::draw() {
 	drawDisks();
 	drawAttractors();
