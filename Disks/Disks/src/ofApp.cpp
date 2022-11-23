@@ -54,13 +54,14 @@ void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 	}
 }
 
-//--------------------------------------------------------------
-void ofApp::draw() {
+void ofApp::drawDisks()
+{
 	for (auto& disk : disks)
 	{
 		ofSetColor(disk.color);
 		ofDrawCircle(disk.pos, disk.size);
 	}
+}
 	for (auto& force_point : force_points)
 	{
 		ofSetColor(ofColor::black);
@@ -68,6 +69,10 @@ void ofApp::draw() {
 		ofSetColor(force_point_color);
 		ofDrawCircle(force_point, force_point_size);
 	}
+
+//--------------------------------------------------------------
+void ofApp::draw() {
+	drawDisks();
 	gui.draw();
 }
 
