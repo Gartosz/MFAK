@@ -71,6 +71,9 @@ class ofApp : public ofBaseApp{
 		ofxFloatSlider gravity;
 		ofxFloatSlider attractor_mass;
 		ofxFloatSlider viscosity;
+		ofxToggle apply_attractor;
+		ofxToggle apply_viscosity;
+
 
 		int force_point_size;
 		ofColor force_point_color;
