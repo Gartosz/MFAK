@@ -82,5 +82,5 @@ class ofApp : public ofBaseApp{
 		std::vector<disk_parameters> disks;
 		std::vector<ofVec2f> force_points;
 
-		void wallHit(disk_parameters& parameter, float const* windowSize);
+		void checkWallHit(disk_parameters& parameter, float const* windowSize);
 };

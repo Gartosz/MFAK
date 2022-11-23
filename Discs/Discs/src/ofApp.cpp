@@ -32,7 +32,7 @@ void ofApp::update() {
 	}
 }
 
-void ofApp::wallHit(disk_parameters& parameter, float const* windowSize)
+void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 {
 	for (int i = 0; i < 2; ++i)
 	{
