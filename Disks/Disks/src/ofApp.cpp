@@ -62,17 +62,22 @@ void ofApp::drawDisks()
 		ofDrawCircle(disk.pos, disk.size);
 	}
 }
+
+void ofApp::drawAttractors()
+{
 	for (auto& force_point : force_points)
 	{
 		ofSetColor(ofColor::black);
-		ofDrawCircle(force_point, force_point_size+3);
+		ofDrawCircle(force_point, force_point_size + 3);
 		ofSetColor(force_point_color);
 		ofDrawCircle(force_point, force_point_size);
 	}
+}
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 	drawDisks();
+	drawAttractors();
 	gui.draw();
 }
 
