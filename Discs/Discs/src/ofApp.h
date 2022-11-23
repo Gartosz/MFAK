@@ -48,7 +48,6 @@ class ofApp : public ofBaseApp{
 			ofColor color = { 0, 0, 0 };
 			float mass = 0;
 			ofVec2f velocity =  { 1, 1 };
-			ofVec2f acceleration = { 0, 0 };
 
 			disk_parameters()
 			{
@@ -61,8 +60,6 @@ class ofApp : public ofBaseApp{
 				mass = ofRandom(50.0, 150.0);
 				velocity[0] = ofRandom(-5.0, 5.0);
 				velocity[1] = ofRandom(-5.0, 5.0);
-				acceleration[0] = ofRandom(-0.5, 0.5);
-				acceleration[1] = ofRandom(-0.5, 0.5);
 			}
 		};
 		ofxPanel gui;
