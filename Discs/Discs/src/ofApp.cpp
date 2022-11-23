@@ -18,7 +18,7 @@ void ofApp::update() {
 	for (auto& disk : parameters)
 		ofVec2f acceleration(0, 0);
 	{
-		disk.pos += disk.velocity * speed_slider;
+			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
 			acceleration += drag_force / disk.mass;
 		wallHit(disk, windowSize);
 		for (auto& force_point : force_points) 
