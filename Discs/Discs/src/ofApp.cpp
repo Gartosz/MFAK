@@ -39,20 +39,18 @@ void ofApp::update() {
 	}
 }
 
+float ofApp::checkValueChange(float const &before_modification, float const& pos)
+{
+	return before_modification == pos ? 1.0 : -1.0;
+}
+
 void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 {
+	ofVec2f before_modification(parameter.pos);
 	for (int i = 0; i < 2; ++i)
 	{
-		if (parameter.pos[i] >= windowSize[i] - parameter.size)
-		{
-			parameter.pos[i] = windowSize[i] - parameter.size;
-			parameter.velocity[i] *= -0.8;
-		}
-		else if (parameter.pos[i] <= parameter.size)
-		{
-			parameter.pos[i] = parameter.size;
-			parameter.velocity[i] *= -0.8;
-		}
+		parameter.pos[i] = ofClamp(parameter.pos[i], 0, windowSize[i]);
+		parameter.velocity *= ofVec2f(checkValueChange(before_modification[i], parameter.pos[i]));
 	}
 }
 
