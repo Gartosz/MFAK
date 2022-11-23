@@ -25,7 +25,7 @@ void ofApp::update() {
 		{
 			float distance = force_point.distance(disk.pos);
 			ofVec2f distance_vector(force_point - disk.pos);
-			ofVec2f force = (gravity_slider * mass_slider * disk.mass * distance_vector) / pow(distance, 3);
+				ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, 3 / 2);
 				acceleration += force / disk.mass;
 		}
 		ofVec2f drag_force = -6*PI*disk.velocity*viscosity*disk.size;
