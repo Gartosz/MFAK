@@ -7,6 +7,9 @@ void ofApp::setup() {
 	gui.add(delta_time.setup("Speed", 1.00, 0.00, 2.00));
 	gui.add(gravity.setup("Gravity", 9.81, 0.0, 20.0));
 	gui.add(attractor_mass.setup("Mass", 10.0, 0.0, 300.0));
+	gui.add(viscosity.setup("Viscosity", 0.000181, 0.0, 0.001));
+	gui.add(apply_attractor.setup("Toggle attractor force", false, 20, 20));
+	gui.add(apply_viscosity.setup("Toggle drag force", false, 20, 20));
 }
 
 //--------------------------------------------------------------
