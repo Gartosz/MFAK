@@ -49,7 +49,7 @@ void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 	ofVec2f before_modification(parameter.pos);
 	for (int i = 0; i < 2; ++i)
 	{
-		parameter.pos[i] = ofClamp(parameter.pos[i], 0, windowSize[i] - parameter.size);
+		parameter.pos[i] = ofClamp(parameter.pos[i], parameter.size, windowSize[i] - parameter.size);
 		parameter.velocity[i] *= checkValueChange(before_modification[i], parameter.pos[i]);
 	}
 }
