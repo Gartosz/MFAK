@@ -75,4 +75,5 @@ class ofApp : public ofBaseApp{
 		void drawAttractors();
 		void drawDisks();
 		void applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration);
+		void ofApp::moveDisk(ofApp::disk_parameters& disk, ofVec2f const& acceleration, float const* windowSize);
 };
