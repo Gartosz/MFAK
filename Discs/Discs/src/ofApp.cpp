@@ -65,6 +65,8 @@ void ofApp::draw() {
 	}
 	for (auto& force_point : force_points)
 	{
+		ofSetColor(ofColor::black);
+		ofDrawCircle(force_point, force_point_size+3);
 	ofSetColor(force_point_color);
 	for (auto& force_point : force_points)
 		ofDrawCircle(force_point, force_point_size);
