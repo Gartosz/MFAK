@@ -76,6 +76,7 @@ class ofApp : public ofBaseApp{
 
 
 		int force_point_size;
+		float epsilon;
 		ofColor force_point_color;
 
 		std::vector<disk_parameters> disks;
