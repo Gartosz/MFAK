@@ -66,12 +66,12 @@ class ofApp : public ofBaseApp{
 
 		void setup();
 		void update();
-		void drawDisks();
+		void draw();
 
 		void mousePressed(int x, int y, int button);
 
 		float checkValueChange(float const& before_modification, float const& pos);
 		void checkWallHit(disk_parameters& parameter, float const* windowSize);
 		void drawAttractors();
-		void draw();
+		void drawDisks();
 };
