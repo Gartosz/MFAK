@@ -34,7 +34,7 @@ class ofApp : public ofBaseApp{
 				disks.push_back(disk_parameters());
 			}
 			force_point_color.set(255, 255, 255);
-			force_point_size = 20;
+			force_point_size = 15;
 			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
 			this->epsilon = epsilon;
 		}
