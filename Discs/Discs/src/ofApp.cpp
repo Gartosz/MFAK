@@ -15,7 +15,8 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update() {
 	float windowSize[2] = { ofGetWidth(), ofGetHeight() };
-	for (auto& disk : parameters)
+	for (auto& disk : disks)
+	{
 		ofVec2f acceleration(0, 0);
 		if (apply_viscosity)
 	{
