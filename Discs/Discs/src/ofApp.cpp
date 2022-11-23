@@ -19,19 +19,19 @@ void ofApp::update() {
 	{
 		ofVec2f acceleration(0, 0);
 		if (apply_viscosity)
-	{
+		{
 			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
 			acceleration += drag_force / disk.mass;
 		}
 		if (apply_attractor)
 		{
-		for (auto& force_point : force_points) 
-		{
-			float distance = force_point.distance(disk.pos);
-			ofVec2f distance_vector(force_point - disk.pos);
+			for (auto& force_point : force_points)
+			{
+				float distance = force_point.distance(disk.pos);
+				ofVec2f distance_vector(force_point - disk.pos);
 				ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, 3 / 2);
 				acceleration += force / disk.mass;
-		}
+			}
 		}
 		disk.velocity += acceleration * delta_time;
 		disk.pos += disk.velocity * delta_time;
@@ -67,8 +67,7 @@ void ofApp::draw() {
 	{
 		ofSetColor(ofColor::black);
 		ofDrawCircle(force_point, force_point_size+3);
-	ofSetColor(force_point_color);
-	for (auto& force_point : force_points)
+		ofSetColor(force_point_color);
 		ofDrawCircle(force_point, force_point_size);
 	}
 	gui.draw();
