@@ -9,12 +9,6 @@
 class ofApp : public ofBaseApp{
 
 	public:
-		void setup();
-		void update();
-		void draw();
-
-		void mousePressed(int x, int y, int button);
-
 		ofApp(int n = 1000, float epsilon = 2.0)
 		{
 			ofSetCircleResolution(100);
@@ -68,6 +62,13 @@ class ofApp : public ofBaseApp{
 
 		std::vector<disk_parameters> disks;
 		std::vector<ofVec2f> force_points;
+
+
+		void setup();
+		void update();
+		void drawDisks();
+
+		void mousePressed(int x, int y, int button);
 
 		float checkValueChange(float const& before_modification, float const& pos);
 		void checkWallHit(disk_parameters& parameter, float const* windowSize);
