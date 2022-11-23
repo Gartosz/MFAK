@@ -58,7 +58,7 @@ void ofApp::checkWallHit(disk_parameters& parameter, float const* windowSize)
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	for (int i = 0; i < number; ++i)
+	for (auto& disk : disks)
 	{
 		ofSetColor(disk.color);
 		ofDrawCircle(disk.pos, disk.size);
