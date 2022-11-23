@@ -71,4 +71,6 @@ class ofApp : public ofBaseApp{
 
 		float checkValueChange(float const& before_modification, float const& pos);
 		void checkWallHit(disk_parameters& parameter, float const* windowSize);
+		void drawAttractors();
+		void draw();
 };
