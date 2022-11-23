@@ -59,8 +59,8 @@ class ofApp : public ofBaseApp{
 				color[1] = ofRandom(0, 240);
 				color[2] = ofRandom(0, 240);
 				mass = ofRandom(50.0, 150.0);
-				velocity[0] = ofRandom(-3.0, 3.0);
-				velocity[1] = ofRandom(-3.0, 3.0);
+				velocity[0] = ofRandom(-5.0, 5.0);
+				velocity[1] = ofRandom(-5.0, 5.0);
 				acceleration[0] = ofRandom(-0.5, 0.5);
 				acceleration[1] = ofRandom(-0.5, 0.5);
 			}
