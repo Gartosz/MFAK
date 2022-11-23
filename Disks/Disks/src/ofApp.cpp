@@ -12,13 +12,7 @@ void ofApp::setup() {
 	gui.add(apply_viscosity.setup("Toggle drag force", false, 20, 20));
 }
 
-//--------------------------------------------------------------
-void ofApp::update() {
-	float windowSize[2] = { ofGetWidth(), ofGetHeight() };
-	for (auto& disk : disks)
-	{
-		ofVec2f acceleration(0, 0);
-		if (apply_viscosity)
+void ofApp::applyDragForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration)
 		{
 			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
 			acceleration += drag_force / disk.mass;
@@ -41,6 +35,18 @@ void ofApp::moveDisk(ofApp::disk_parameters& disk, ofVec2f const &acceleration, 
 		disk.velocity += acceleration * delta_time;
 		disk.pos += disk.velocity * delta_time;
 		checkWallHit(disk, windowSize);
+	}
+
+void ofApp::update() {
+	const float windowSize[2] = { ofGetWidth(), ofGetHeight() };
+	for (auto& disk : disks)
+	{
+		ofVec2f acceleration(0, 0);
+		if (apply_viscosity)
+			applyDragForce(disk, acceleration);
+		if (apply_attractor)
+			applyAttractorForce(disk, acceleration);
+		moveDisk(disk, acceleration, windowSize);
 	}
 }
 
