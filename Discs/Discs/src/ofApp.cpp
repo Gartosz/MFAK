@@ -63,9 +63,12 @@ void ofApp::draw() {
 		ofSetColor(disk.color);
 		ofDrawCircle(disk.pos, disk.size);
 	}
+	for (auto& force_point : force_points)
+	{
 	ofSetColor(force_point_color);
 	for (auto& force_point : force_points)
 		ofDrawCircle(force_point, force_point_size);
+	}
 	gui.draw();
 }
 
