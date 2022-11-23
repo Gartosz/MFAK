@@ -74,4 +74,5 @@ class ofApp : public ofBaseApp{
 		void checkWallHit(disk_parameters& parameter, float const* windowSize);
 		void drawAttractors();
 		void drawDisks();
+		void applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration);
 };

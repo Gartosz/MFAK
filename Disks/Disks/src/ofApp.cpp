@@ -23,7 +23,9 @@ void ofApp::update() {
 			ofVec2f drag_force = -6 * PI * disk.velocity * viscosity * disk.size;
 			acceleration += drag_force / disk.mass;
 		}
-		if (apply_attractor)
+
+
+void ofApp::applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration)
 		{
 			for (auto& force_point : force_points)
 			{
