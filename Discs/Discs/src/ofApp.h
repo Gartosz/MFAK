@@ -25,7 +25,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		ofApp(int n = 1000)
+		ofApp(int n = 1000, float epsilon = 2.0)
 		{
 			ofSetCircleResolution(100);
 			number = n;
@@ -36,6 +36,7 @@ class ofApp : public ofBaseApp{
 			force_point_color.set(255, 255, 255);
 			force_point_size = 20;
 			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
+			this->epsilon = epsilon;
 		}
 
 	private:
