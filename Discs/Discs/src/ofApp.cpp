@@ -4,9 +4,9 @@
 void ofApp::setup() {
 	gui.setup();
 	gui.add(speed_slider.setup("Modify speed", 1.00, 0.00, 2.00));
-	gui.add(gravity_slider.setup("Modify gravity", 0.0, 0.0, 20.0));
-	gui.add(mass_slider.setup("Modify mass", 0.0, 0.0, 500.0));
-	gui.add(viscosity.setup("Modify viscosity", 0.000181, 0.0, 0.001));
+	gui.add(delta_time.setup("Speed", 1.00, 0.00, 2.00));
+	gui.add(gravity.setup("Gravity", 9.81, 0.0, 20.0));
+	gui.add(attractor_mass.setup("Mass", 10.0, 0.0, 300.0));
 }
 
 //--------------------------------------------------------------
