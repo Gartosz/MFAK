@@ -30,6 +30,7 @@ void ofApp::update() {
 		}
 		ofVec2f drag_force = -6*PI*disk.velocity*viscosity*disk.size;
 		disk.velocity += acceleration * delta_time;
+		disk.pos += disk.velocity * delta_time;
 	}
 }
 
