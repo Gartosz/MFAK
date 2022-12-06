@@ -1,0 +1,4 @@
+This directory contains my solution to task number 3. 
+It's point was to create a model that would simulate movements of some disks (as 2d circles) with some physics. Each dynamic object reflects from every wall, can be attracted with force to static disks called attractors with some calculated force as well as react to drag force. 
+Mass, size and initial velocity of moving disks are random from constant range. At the beginning there's only one attractoe, but left mouse button creates a new one at it's position. All of them has the same mass, which is modifiable by slider. Gravity, delta time (changes speed of simulation) and viscosity (for drag force) also have their sliders. Drag force and attraction of moving disks to force points can be toggled. 
+Presentation of functionality can be checked in Disks_presentation.mkv file.
