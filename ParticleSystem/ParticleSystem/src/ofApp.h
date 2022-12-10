@@ -29,7 +29,7 @@ class ofApp : public ofBaseApp{
 		{
 			int size = 1;
 			ofVec3f pos = { 0, 0, 0 };
-			ofColor color = { 0, 0, 0 };
+			ofColor color = { 255, 255, 255 };
 			float mass = 0;
 			ofVec2f velocity =  { 1, 1 };
 
@@ -39,9 +39,6 @@ class ofApp : public ofBaseApp{
 				pos[0] = std::rand() % (ofGetWidth() - size * 2);
 				pos[1] = std::rand() % (ofGetHeight() - size * 2);
 				pos[2] = std::rand() % (ofGetHeight() - size * 2);
-				color[0] = ofRandom(0, 240);
-				color[1] = ofRandom(0, 240);
-				color[2] = ofRandom(0, 240);
 				mass = ofRandom(50.0, 150.0);
 				velocity[0] = ofRandom(-5.0, 5.0);
 				velocity[1] = ofRandom(-5.0, 5.0);
