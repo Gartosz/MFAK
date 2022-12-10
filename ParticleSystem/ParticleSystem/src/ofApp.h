@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 			ofVec3f pos = { 0, 0, 0 };
 			ofColor color = { 255, 255, 255 };
 			float mass = 0;
-			ofVec2f velocity =  { 1, 1 };
+			ofVec3f velocity =  { 1, 1, 1 };
 
 			disk_parameters()
 			{
@@ -42,6 +42,7 @@ class ofApp : public ofBaseApp{
 				mass = ofRandom(20.0, 80.0);
 				velocity[0] = ofRandom(-5.0, 5.0);
 				velocity[1] = ofRandom(-5.0, 5.0);
+				velocity[2] = ofRandom(-5.0, 5.0);
 			}
 		};
 		ofxPanel gui;
