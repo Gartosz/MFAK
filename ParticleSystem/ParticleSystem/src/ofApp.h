@@ -35,11 +35,11 @@ class ofApp : public ofBaseApp{
 
 			disk_parameters()
 			{
-				size = std::rand() % 15 + 5;
+				size = std::rand() % 3 + 1;
 				pos[0] = std::rand() % (ofGetWidth() - size * 2);
 				pos[1] = std::rand() % (ofGetHeight() - size * 2);
-				pos[2] = std::rand() % (ofGetHeight() - size * 2);
-				mass = ofRandom(50.0, 150.0);
+				pos[2] = std::rand() % (2000);
+				mass = ofRandom(20.0, 80.0);
 				velocity[0] = ofRandom(-5.0, 5.0);
 				velocity[1] = ofRandom(-5.0, 5.0);
 			}
