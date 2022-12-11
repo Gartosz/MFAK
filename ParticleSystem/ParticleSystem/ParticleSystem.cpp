@@ -8,6 +8,12 @@ void ParticleSystem::generate()
 
 void ParticleSystem::wake(size_t index)
 {
+    if (last_alive_index < max_particles)
+    {
+        particles[index].is_alive = true;
+        std::rotate(particles.begin(), particles.begin() + index + 1, particles.begin() + index + 2);
+        last_alive_index++;
+    }
 
 }
 
