@@ -7,10 +7,11 @@ public:
 	struct disk_parameters
 	{
 		int size = 1;
-		ofVec3f pos = { 0, 0, 0 };
+		glm::vec4 pos = { 0, 0, 0, 0 };
 		ofColor color = { 255, 255, 255 };
 		float mass = 0;
-		ofVec3f velocity = { 1, 1, 1 };
+		glm::vec4 velocity = { 1, 1, 1, 1 };
+		glm::vec4 acceleration = { 0, 0, 0, 0 };
 
 		disk_parameters()
 		{
