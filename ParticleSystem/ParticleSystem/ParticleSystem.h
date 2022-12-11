@@ -5,7 +5,7 @@ class ParticleSystem
 {
 public:
 	size_t max_particles = 0;
-	size_t last_alive_index = 0;
+	size_t last_alive_index = -1;
 
 	struct disk_parameters
 	{
