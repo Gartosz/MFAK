@@ -89,7 +89,7 @@ void ofApp::draw() {
 	camera.begin();
 	//ofEnableDepthTest();
 	drawDisks();
-	drawAttractors();
+	//drawAttractors();
 	//gui.draw();
 	//ofDisableDepthTest();
 	camera.end();
