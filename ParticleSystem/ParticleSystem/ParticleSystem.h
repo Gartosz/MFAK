@@ -30,14 +30,13 @@ public:
 	ParticleSystem(int max_n = 10000)
 	{
 		max_particles = max_n;
-		for (int i = 0; i < max_particles; i++)
-		{
-			particles.push_back(disk_parameters());
-		}
+		generate();
 
 	}
-	void generate(size_t maxSize);
 	void kill(size_t index);
 	void wake(size_t index);
 
+private:
+	void generate();
+	
 };

@@ -1,8 +1,9 @@
 #include "ParticleSystem.h"
 
-void ParticleSystem::generate(size_t maxSize)
+void ParticleSystem::generate()
 {
-
+	for (int i = 0; i < max_particles; i++)
+		particles.push_back(disk_parameters());
 }
 
 void ParticleSystem::wake(size_t index)
