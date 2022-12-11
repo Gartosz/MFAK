@@ -21,10 +21,12 @@ class ofApp : public ofBaseApp{
 			force_point_size = 15;
 			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
 			this->epsilon = epsilon;
+
 		}
 
 	private:
 		int number;
+		ofEasyCam camera;
 		struct disk_parameters
 		{
 			int size = 1;
@@ -38,7 +40,7 @@ class ofApp : public ofBaseApp{
 				size = std::rand() % 3 + 1;
 				pos[0] = std::rand() % (ofGetWidth() - size * 2);
 				pos[1] = std::rand() % (ofGetHeight() - size * 2);
-				pos[2] = std::rand() % (2000);
+				pos[2] = std::rand() % 2000;
 				mass = ofRandom(20.0, 80.0);
 				velocity[0] = ofRandom(-5.0, 5.0);
 				velocity[1] = ofRandom(-5.0, 5.0);
