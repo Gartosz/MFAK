@@ -16,10 +16,10 @@ void ofApp::update() {
 
 void ofApp::drawParticles()
 {
-	for (auto& disk : system.disks)
+	for (auto& particle : system.particles)
 	{
-		ofSetColor(disk.color);
-		ofDrawSphere(disk.pos, disk.size);
+		ofSetColor(particle.color);
+		ofDrawSphere(particle.pos, particle.size);
 	}
 }
 
