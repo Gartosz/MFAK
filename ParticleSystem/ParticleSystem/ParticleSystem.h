@@ -2,5 +2,8 @@
 
 class ParticleSystem
 {
+public:
+
+private:
 
 };

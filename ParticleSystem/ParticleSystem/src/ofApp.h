@@ -17,11 +17,7 @@ class ofApp : public ofBaseApp{
 			{
 				disks.push_back(disk_parameters());
 			}
-			force_point_color.set(255, 255, 255);
-			force_point_size = 15;
-			force_points.push_back(ofVec2f(ofGetWidth() / 2, ofGetHeight() / 2));
 			this->epsilon = epsilon;
-
 		}
 
 	private:
@@ -53,13 +49,9 @@ class ofApp : public ofBaseApp{
 		ofxFloatSlider gravity;
 		ofxFloatSlider attractor_mass;
 		ofxFloatSlider viscosity;
-		ofxToggle apply_attractor;
 		ofxToggle apply_viscosity;
 
-
-		int force_point_size;
 		float epsilon;
-		ofColor force_point_color;
 
 		std::vector<disk_parameters> disks;
 		std::vector<ofVec2f> force_points;
@@ -73,9 +65,7 @@ class ofApp : public ofBaseApp{
 
 		float checkValueChange(float const& before_modification, float const& pos);
 		void checkWallHit(disk_parameters& parameter, float const* windowSize);
-		void drawAttractors();
 		void drawDisks();
 		void applyDragForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration);
-		void applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acceleration);
-		void ofApp::moveDisk(ofApp::disk_parameters& disk, ofVec2f const& acceleration, float const* windowSize);
+		void moveDisk(ofApp::disk_parameters& disk, ofVec2f const& acceleration, float const* windowSize);
 };
