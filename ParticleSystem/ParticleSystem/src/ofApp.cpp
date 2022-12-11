@@ -19,7 +19,7 @@ void ofApp::drawParticles()
 	for (auto& disk : system.disks)
 	{
 		ofSetColor(disk.color);
-		ofDrawCircle(disk.pos, disk.size);
+		ofDrawSphere(disk.pos, disk.size);
 	}
 }
 
