@@ -7,7 +7,7 @@ public:
 	size_t max_particles = 0;
 	size_t last_alive_index = -1;
 
-	struct disk_parameters
+	struct particles_parameters
 	{
 		int size = 1;
 		glm::vec4 pos = { 0, 0, 0, 0 };
@@ -18,14 +18,14 @@ public:
 		bool is_alive = false;
 		float time_to_live = 0;
 
-		disk_parameters()
+		particles_parameters()
 		{
 			size = std::rand() % 3 + 1;
 			mass = ofRandom(20.0, 80.0);
 		}
 	};
 
-	std::vector<disk_parameters> particles;
+	std::vector<particles_parameters> particles;
 
 	ParticleSystem(int max_n = 10000)
 	{

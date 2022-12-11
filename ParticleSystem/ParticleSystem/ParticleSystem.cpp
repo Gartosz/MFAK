@@ -3,7 +3,7 @@
 void ParticleSystem::generate()
 {
 	for (int i = 0; i < max_particles; i++)
-		particles.push_back(disk_parameters());
+		particles.push_back(particles_parameters());
 }
 
 void ParticleSystem::wake(size_t index)
