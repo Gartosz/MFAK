@@ -19,5 +19,11 @@ void ParticleSystem::wake(size_t index)
 
 void ParticleSystem::kill(size_t index)
 {
+    if (last_alive_index > -1)
+    {
+        particles[index].is_alive = false;
+        std::rotate(particles.begin(), particles.begin() + index + 1, particles.end());
+        --last_alive_index;
+    }
 
 }
