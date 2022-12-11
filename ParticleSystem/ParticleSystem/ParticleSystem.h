@@ -4,6 +4,7 @@
 class ParticleSystem
 {
 public:
+	int max_particles = 0;
 	struct disk_parameters
 	{
 		int size = 1;
@@ -36,6 +37,9 @@ public:
 		}
 
 	}
+	void generate(size_t maxSize);
+	void kill(size_t index);
+	void wake(size_t index);
 
 	int max_particles = 0;
 };
