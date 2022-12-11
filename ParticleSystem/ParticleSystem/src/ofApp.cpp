@@ -46,7 +46,6 @@ void ofApp::update() {
 			applyDragForce(disk, acceleration);
 		if (apply_attractor)
 			applyAttractorForce(disk, acceleration);
-		acceleration[1] -= gravity * delta_time;
 		moveDisk(disk, acceleration, windowSize);
 	}
 }
@@ -88,9 +87,11 @@ void ofApp::drawAttractors()
 
 void ofApp::draw() {
 	camera.begin();
+	//ofEnableDepthTest();
 	drawDisks();
 	drawAttractors();
 	gui.draw();
+	//ofDisableDepthTest();
 	camera.end();
 }
 
