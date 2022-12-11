@@ -22,9 +22,6 @@ public:
 		{
 			size = std::rand() % 3 + 1;
 			mass = ofRandom(20.0, 80.0);
-			velocity[0] = ofRandom(-5.0, 5.0);
-			velocity[1] = ofRandom(-5.0, 5.0);
-			velocity[2] = ofRandom(-5.0, 5.0);
 		}
 	};
 
