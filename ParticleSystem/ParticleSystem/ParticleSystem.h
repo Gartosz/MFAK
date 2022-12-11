@@ -12,7 +12,7 @@ public:
 		float mass = 0;
 		glm::vec4 velocity = { 1, 1, 1, 1 };
 		glm::vec4 acceleration = { 0, 0, 0, 0 };
-		bool is_alive = true;
+		bool is_alive = false;
 		float time_to_live = 0;
 
 		disk_parameters()
