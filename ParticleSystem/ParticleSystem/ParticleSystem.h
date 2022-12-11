@@ -4,7 +4,9 @@
 class ParticleSystem
 {
 public:
-	int max_particles = 0;
+	size_t max_particles = 0;
+	size_t last_alive_index = 0;
+
 	struct disk_parameters
 	{
 		int size = 1;
@@ -41,5 +43,4 @@ public:
 	void kill(size_t index);
 	void wake(size_t index);
 
-	int max_particles = 0;
 };
