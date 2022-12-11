@@ -27,16 +27,15 @@ public:
 
 	std::vector<disk_parameters> particles;
 
-	ParticleSystem(int max_n = 10000, float epsilon = 5)
+	ParticleSystem(int max_n = 10000)
 	{
 		max_particles = max_n;
 		for (int i = 0; i < max_particles; i++)
 		{
 			particles.push_back(disk_parameters());
 		}
-		this->epsilon = epsilon;
+
 	}
-private:
-	float epsilon;
+
 	int max_particles = 0;
 };
