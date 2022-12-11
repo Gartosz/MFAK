@@ -34,7 +34,7 @@ void ofApp::moveDisk(ofApp::disk_parameters& disk, ofVec2f const &acceleration, 
 {
 	disk.velocity += acceleration * delta_time;
 	disk.pos += disk.velocity * delta_time;
-	checkWallHit(disk, windowSize);
+	//checkWallHit(disk, windowSize);
 }
 
 void ofApp::update() {
