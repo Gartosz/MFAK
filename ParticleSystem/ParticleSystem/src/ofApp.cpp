@@ -10,13 +10,14 @@ void ofApp::setup() {
 	gui.add(apply_viscosity.setup("Toggle drag force", false, 20, 20));
 }
 
-void ofApp::update() {
+void ofApp::update() 
+{
 		
 }
 
 void ofApp::drawParticles()
 {
-	for (auto& particle : system.particles)
+	for (auto& particle : system.data.particles)
 	{
 		ofSetColor(particle.color);
 		ofDrawSphere(particle.pos, particle.size);
