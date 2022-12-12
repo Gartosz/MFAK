@@ -70,6 +70,7 @@ public:
 class ParticleSystem
 {
 protected:
+	std::vector<std::shared_ptr<ParticleEmitter>> emitters;
 	
 public:
 	ParticleData data;
@@ -77,4 +78,5 @@ public:
 	{
 		data = ParticleData(max_n);
 	}
+		void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
 };
