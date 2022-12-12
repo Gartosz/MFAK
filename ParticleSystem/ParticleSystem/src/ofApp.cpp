@@ -33,3 +33,6 @@ void ofApp::draw() {
 	//ofDisableDepthTest();
 	camera.end();
 }
+
+void ofApp::createEmitters() {
+}

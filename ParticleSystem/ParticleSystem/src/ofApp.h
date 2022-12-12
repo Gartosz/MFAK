@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include "ofXGui.h"
 #include "../ParticleSystem.h"
+#include "../ParticleEmitters.h"
+#include "../ParticleGenerators.h"
 
 class ofApp : public ofBaseApp{
 
@@ -14,6 +16,7 @@ class ofApp : public ofBaseApp{
 		{
 			ofSetCircleResolution(100);
 			system = ParticleSystem(n);
+			createEmitters();
 		}
 
 	private:
@@ -33,4 +36,5 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 		void drawParticles();
+		void createEmitters();
 };
