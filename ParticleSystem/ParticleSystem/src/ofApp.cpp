@@ -19,6 +19,8 @@ void ofApp::drawParticles()
 {
 	for (auto& particle : system.data.particles)
 	{
+		if (!particle.is_alive)
+			break;
 		ofSetColor(particle.color);
 		ofDrawSphere(particle.pos, particle.size);
 	}
