@@ -41,6 +41,14 @@ private:
 	void generate();
 };
 
+class ParticleGenerator
+{
+public:
+	ParticleGenerator() { }
+	virtual ~ParticleGenerator() { }
+
+	virtual void generate(double dt, ParticleData* p, size_t start_index, size_t end_index) = 0;
+};
 
 class ParticleSystem
 {
