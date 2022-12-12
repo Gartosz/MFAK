@@ -35,4 +35,13 @@ void ofApp::draw() {
 }
 
 void ofApp::createEmitters() {
+	auto particleEmitter = std::make_shared<ParticleEmitter>();
+	{
+		particleEmitter->emit_rate = (float)140 * 0.45f;
+
+		auto posGenerator = std::make_shared<BoxPosGen>();
+		posGenerator->pos = glm::vec4{ 0.0, 0.0, 0.0, 0.0 };
+		particleEmitter->addGenerator(posGenerator);
+	}
+	system.addEmitter(particleEmitter);
 }
