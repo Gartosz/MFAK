@@ -40,6 +40,10 @@
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleEmitters.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGenerators.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -98,6 +102,10 @@
     <ClInclude Include="ParticleSystem.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="ParticleEmitters.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGenerators.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
