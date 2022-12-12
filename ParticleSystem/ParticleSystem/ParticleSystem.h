@@ -50,6 +50,22 @@ public:
 	virtual void generate(double dt, ParticleData* p, size_t start_index, size_t end_index) = 0;
 };
 
+class ParticleEmitter
+{
+protected:
+	std::vector<std::shared_ptr<ParticleGenerator>> generators;
+
+public:
+	int emit_rate;
+	ParticleEmitter(int rate = 0)
+	{
+		emit_rate = rate;
+	}
+
+	void addGenerator(std::shared_ptr<ParticleGenerator> gen) { generators.push_back(gen); }
+
+};
+
 class ParticleSystem
 {
 protected:
