@@ -62,6 +62,7 @@ public:
 		emit_rate = rate;
 	}
 
+	void emit(double dt, ParticleData* p);
 	void addGenerator(std::shared_ptr<ParticleGenerator> gen) { generators.push_back(gen); }
 
 };

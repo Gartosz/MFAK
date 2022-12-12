@@ -27,3 +27,16 @@ void ParticleData::kill(size_t index)
     }
 
 }
+
+void ParticleEmitter::emit(double dt, ParticleData* p)
+{
+    const size_t maxNewParticles = static_cast<size_t>(dt * emit_rate);
+    const size_t start_index = p->last_alive_index;
+    const size_t end_index = std::min(start_index + maxNewParticles, p->max_particles - 1);
+
+    for (auto& gen : generators)            // << gen loop
+        gen->generate(dt, p, start_index, end_index);
+
+    for (size_t i = start_index; i < end_index; ++i)  // << wake loop
+        p->wake(i);
+}
