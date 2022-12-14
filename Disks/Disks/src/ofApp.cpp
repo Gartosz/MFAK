@@ -25,7 +25,7 @@ void ofApp::applyAttractorForce(ofApp::disk_parameters const &disk, ofVec2f& acc
 	{
 		float distance = force_point.distance(disk.pos);
 		ofVec2f distance_vector(force_point - disk.pos);
-		ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, float(3 / 2));
+		ofVec2f force = (gravity * attractor_mass * disk.mass * distance_vector) / pow(distance * distance + epsilon, 3.0F / 2);
 		acceleration += force / disk.mass;
 	}
 }

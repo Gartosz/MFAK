@@ -71,7 +71,7 @@ class ParticleSystem
 {
 protected:
 	std::vector<std::shared_ptr<ParticleEmitter>> emitters;
-	
+
 public:
 	ParticleData data;
 	ParticleSystem(int max_n = 10000)
