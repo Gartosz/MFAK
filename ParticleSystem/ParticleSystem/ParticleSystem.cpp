@@ -48,4 +48,10 @@ void ParticleSystem::update(double dt)
     {
         em->emit(dt, &data);
     }
+
+    for (int i = 0; i < data.last_alive_index; ++i)
+    {
+        if ((data.particles[i].time_to_live -= dt) <= 0)
+            data.kill(i);
+    }
 }
