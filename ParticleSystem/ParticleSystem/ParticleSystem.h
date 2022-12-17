@@ -13,7 +13,7 @@ public:
 	}
 
 	size_t max_particles = 0;
-	size_t last_alive_index = -1;
+	size_t last_alive_index = 0;
 
 	struct particles_parameters
 	{
