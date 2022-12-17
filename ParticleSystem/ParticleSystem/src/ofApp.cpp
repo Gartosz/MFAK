@@ -12,7 +12,7 @@ void ofApp::setup() {
 
 void ofApp::update() 
 {
-		
+	system.update(10);
 }
 
 void ofApp::drawParticles()
