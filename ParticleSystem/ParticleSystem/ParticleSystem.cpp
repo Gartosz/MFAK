@@ -11,7 +11,7 @@ void ParticleData::wake(size_t index)
     if (last_alive_index <= max_particles)
     {
         particles[index].is_alive = true;
-        std::rotate(particles.begin(), particles.begin() + index + 1, particles.begin() + index + 2);
+        std::rotate(particles.begin(), particles.begin() + index, particles.begin() + index + 1);
         ++last_alive_index;
     }
 
