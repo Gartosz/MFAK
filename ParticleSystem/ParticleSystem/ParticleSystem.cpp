@@ -40,3 +40,11 @@ void ParticleEmitter::emit(double dt, ParticleData* p)
     for (size_t i = start_index; i < end_index; ++i)  // << wake loop
         p->wake(i);
 }
+
+void ParticleSystem::update(double dt)
+{
+    for (auto& em : emitters)
+    {
+        em->emit(dt, &data);
+    }
+}

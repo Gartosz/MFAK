@@ -79,4 +79,5 @@ public:
 		data = ParticleData(max_n);
 	}
 		void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
+	void update(double dt);
 };
