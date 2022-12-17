@@ -6,11 +6,12 @@ void ParticleData::generate()
 		particles.push_back(particles_parameters());
 }
 
-void ParticleData::wake(size_t index)
+void ParticleData::wake(size_t index, size_t alive_time)
 {
     if (last_alive_index <= max_particles)
     {
         particles[index].is_alive = true;
+        particles[index].time_to_live = alive_time;
         std::rotate(particles.begin(), particles.begin() + index, particles.begin() + index + 1);
         ++last_alive_index;
     }
@@ -38,7 +39,7 @@ void ParticleEmitter::emit(double dt, ParticleData* p)
         gen->generate(dt, p, start_index, end_index);
 
     for (size_t i = start_index; i < end_index; ++i)  // << wake loop
-        p->wake(i);
+        p->wake(i, alive_time);
 }
 
 void ParticleSystem::update(double dt)

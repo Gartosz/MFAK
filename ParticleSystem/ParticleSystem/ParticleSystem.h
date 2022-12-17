@@ -35,7 +35,7 @@ public:
 
 	std::vector<particles_parameters> particles;
 	void kill(size_t index);
-	void wake(size_t index);
+	void wake(size_t index, size_t alive_time);
 
 private:
 	void generate();
@@ -57,9 +57,11 @@ protected:
 
 public:
 	int emit_rate;
-	ParticleEmitter(int rate = 0)
+	size_t alive_time;
+	ParticleEmitter(int rate, size_t alive_time_)
 	{
 		emit_rate = rate;
+		alive_time = alive_time_;
 	}
 
 	void emit(double dt, ParticleData* p);
