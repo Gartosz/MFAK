@@ -8,23 +8,23 @@ void ParticleData::generate()
 
 void ParticleData::wake(size_t index, size_t alive_time)
 {
-    if (last_alive_index <= max_particles)
+    if (last_alive_id <= max_particles)
     {
         particles[index].is_alive = true;
         particles[index].time_to_live = alive_time;
         std::rotate(particles.begin(), particles.begin() + index, particles.begin() + index + 1);
-        ++last_alive_index;
+        ++last_alive_id;
     }
 
 }
 
 void ParticleData::kill(size_t index)
 {
-    if (last_alive_index > 0)
+    if (last_alive_id > 0)
     {
         particles[index].is_alive = false;
         std::rotate(particles.begin(), particles.begin() + index + 1, particles.end());
-        --last_alive_index;
+        --last_alive_id;
     }
 
 }
@@ -32,7 +32,7 @@ void ParticleData::kill(size_t index)
 void ParticleEmitter::emit(double dt, ParticleData* p)
 {
     const size_t maxNewParticles = static_cast<size_t>(dt * emit_rate);
-    const size_t start_index = p->last_alive_index;
+    const size_t start_index = p->last_alive_id;
     const size_t end_index = std::min(start_index + maxNewParticles, p->max_particles - 1);
 
     for (auto& gen : generators)            // << gen loop
@@ -49,7 +49,7 @@ void ParticleSystem::update(double dt)
         em->emit(dt, &data);
     }
 
-    for (int i = 0; i < data.last_alive_index; ++i)
+    for (int i = 0; i < data.last_alive_id; ++i)
     {
         if ((data.particles[i].time_to_live -= dt) <= 0)
             data.kill(i);
