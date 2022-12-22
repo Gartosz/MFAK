@@ -28,7 +28,7 @@ public:
 
 		particles_parameters()
 		{
-			size = std::rand() % 3 + 1;
+			size = std::rand() % 2 + 1;
 			mass = ofRandom(20.0, 80.0);
 		}
 	};
