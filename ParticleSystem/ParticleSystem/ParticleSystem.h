@@ -35,7 +35,7 @@ public:
 
 	std::vector<particles_parameters> particles;
 	void kill(size_t index);
-	void wake(size_t index, size_t alive_time);
+	void wake(size_t index, size_t alive_time, float gravity, glm::vec4 velocity);
 
 private:
 	void generate();
@@ -83,6 +83,6 @@ public:
 	{
 		data = ParticleData(max_n);
 	}
-		void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
+	void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
 	void update(double dt);
 };

@@ -1,4 +1,5 @@
 #include "ParticleSystem.h"
+#include "glm/gtc/random.hpp"
 
 void ParticleData::generate()
 {
@@ -6,12 +7,14 @@ void ParticleData::generate()
 		particles.push_back(particles_parameters());
 }
 
-void ParticleData::wake(size_t index, size_t alive_time)
+void ParticleData::wake(size_t index, size_t alive_time, float gravity, glm::vec4 velocity)
 {
     if (last_alive_id <= max_particles)
     {
         particles[index].is_alive = true;
         particles[index].time_to_live = alive_time;
+        particles[index].gravity = gravity;
+        particles[index].velocity = velocity;
         std::rotate(particles.begin(), particles.begin() + index, particles.begin() + index + 1);
         ++last_alive_id;
     }
@@ -35,11 +38,14 @@ void ParticleEmitter::emit(double dt, ParticleData* p)
     const size_t start_index = p->last_alive_id;
     const size_t end_index = std::min(start_index + maxNewParticles, p->max_particles - 1);
 
-    for (auto& gen : generators)            // << gen loop
+    for (auto& gen : generators)
         gen->generate(dt, p, start_index, end_index);
 
-    for (size_t i = start_index; i < end_index; ++i)  // << wake loop
-        p->wake(i, alive_time);
+    for (size_t i = start_index; i < end_index; ++i)
+    {
+        glm::vec4 velocity = glm::linearRand(init_velocity_range[0], init_velocity_range[1]);
+        p->wake(i, alive_time, gravity, velocity);
+    }
 }
 
 void ParticleSystem::update(double dt)
@@ -48,7 +54,6 @@ void ParticleSystem::update(double dt)
     {
         em->emit(dt, &data);
     }
-
     for (int i = 0; i < data.last_alive_id; ++i)
     {
         if ((data.particles[i].time_to_live -= dt) <= 0)
