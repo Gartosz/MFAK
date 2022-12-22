@@ -55,7 +55,7 @@ void ParticleSystem::update(double dt)
         em->emit(dt, &data);
     }
     for (int i = 0; i < data.last_alive_id; ++i)
-    {
+    {   
         data.particles[i].velocity.y -= data.particles[i].gravity * dt;
         data.particles[i].pos += data.particles[i].velocity * dt;
         if ((data.particles[i].time_to_live -= dt) <= 0)
