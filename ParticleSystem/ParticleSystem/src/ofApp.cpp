@@ -20,9 +20,9 @@ void ofApp::drawParticles()
 
 void ofApp::draw() {
 	camera.begin();
-	//ofEnableDepthTest();
+	ofEnableDepthTest();
 	drawParticles();
-	//ofDisableDepthTest();
+	ofDisableDepthTest();
 	camera.end();
 }
 
