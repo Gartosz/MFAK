@@ -25,8 +25,8 @@ void ParticleData::kill(size_t index)
 {
     if (last_alive_id > 0)
     {
-        particles[index].is_alive = false;
-        std::rotate(particles.begin(), particles.begin() + index + 1, particles.begin() + last_alive_id);
+        particles[index] = particles[last_alive_id-1];
+        particles[last_alive_id-1].is_alive = false;
         --last_alive_id;
     }
 
