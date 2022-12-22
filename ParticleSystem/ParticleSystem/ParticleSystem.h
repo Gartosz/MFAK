@@ -18,11 +18,12 @@ public:
 	struct particles_parameters
 	{
 		int size = 1;
-		glm::vec4 pos = { 0, 0, 0, 0 };
+		glm::vec4 pos = glm::vec4(0.0f);
 		ofColor color = { 255, 255, 255 };
 		float mass = 0;
-		glm::vec4 velocity = { 0, 0, 0, 0 };
+		glm::vec4 velocity = glm::vec4(0.0f);
 		glm::vec4 acceleration = { 0, 0, 0, 0 };
+
 		bool is_alive = false;
 		float time_to_live = 0;
 
