@@ -58,10 +58,13 @@ protected:
 public:
 	int emit_rate;
 	size_t alive_time;
-	ParticleEmitter(int rate, size_t alive_time_)
+	float gravity;
+	glm::vec4 init_velocity_range[2] = { glm::vec4(0.0), glm::vec4(0.0) };
+	ParticleEmitter(const int &rate, const size_t &alive_time_, const float &_gravity = 0)
 	{
 		emit_rate = rate;
 		alive_time = alive_time_;
+		gravity = _gravity;
 	}
 
 	void emit(double dt, ParticleData* p);
