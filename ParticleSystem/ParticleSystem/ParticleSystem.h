@@ -22,7 +22,7 @@ public:
 		ofColor color = { 255, 255, 255 };
 		float mass = 0;
 		glm::vec4 velocity = glm::vec4(0.0f);
-
+		float gravity = 0;
 		bool is_alive = false;
 		float time_to_live = 0;
 
