@@ -5,6 +5,7 @@
 #include <ctime>
 #include <stdio.h>
 #include "../ParticleSystem.h"
+#include "../ParticleEmitters.h"
 #include "../ParticleGenerators.h"
 
 class ofApp : public ofBaseApp{

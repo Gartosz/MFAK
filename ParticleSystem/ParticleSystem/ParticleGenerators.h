@@ -8,7 +8,7 @@ public:
     glm::vec4 pos{ 0.0 };
     glm::vec4 max_start_offset{ 0.0 };
 public:
-    BoxPosGen(double offset) 
+    BoxPosGen(glm::vec4 offset) 
     { 
         max_start_offset = glm::vec4(offset);
     }
