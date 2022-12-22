@@ -4,7 +4,7 @@
 
 void ofApp::update() 
 {
-	system.update(10);
+	system.update(dt);
 }
 
 void ofApp::drawParticles()
