@@ -13,7 +13,7 @@ class ofApp : public ofBaseApp{
 		ofApp(int n = 1000, int _dt = 5)
 		{
 			ofSetCircleResolution(100);
-			system = ParticleSystem(n);
+			system = ParticleSystem(n, -200);
 			createEmitters();
 			dt = _dt;
 		}

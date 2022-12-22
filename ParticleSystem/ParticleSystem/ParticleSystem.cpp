@@ -58,6 +58,7 @@ void ParticleSystem::update(double dt)
     {   
         data.particles[i].velocity.y -= data.particles[i].gravity * dt;
         data.particles[i].pos += data.particles[i].velocity * dt;
+        data.particles[i].pos.y = max(data.particles[i].pos.y, floor_level);
         if ((data.particles[i].time_to_live -= dt) <= 0)
             data.kill(i);
     }

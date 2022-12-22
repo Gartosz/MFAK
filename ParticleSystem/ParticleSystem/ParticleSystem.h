@@ -79,9 +79,11 @@ protected:
 
 public:
 	ParticleData data;
-	ParticleSystem(int max_n = 10000)
+	float floor_level;
+	ParticleSystem(int max_n = 10000, float _floor = 0)
 	{
 		data = ParticleData(max_n);
+		floor_level = _floor;
 	}
 	void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
 	void update(double dt);
