@@ -14,6 +14,6 @@ void BoxPosGen::generate(double dt, ParticleData* p, size_t start_index, size_t 
     for (size_t i = start_index; i < end_index; ++i)
     {
         p->particles[i].pos = glm::linearRand(pos_min, pos_max);
-        p->particles[i].color - color;
+        p->particles[i].color = color;
     }
 }
