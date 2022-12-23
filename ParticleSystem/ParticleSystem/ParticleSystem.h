@@ -44,7 +44,10 @@ private:
 class ParticleGenerator
 {
 public:
-	ParticleGenerator() { }
+	ofColor color;
+	ParticleGenerator() {
+		color = ofColor::white;
+	}
 	virtual ~ParticleGenerator() { }
 
 	virtual void generate(double dt, ParticleData* p, size_t start_index, size_t end_index) = 0;

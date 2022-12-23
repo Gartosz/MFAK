@@ -27,7 +27,7 @@ void ofApp::draw() {
 }
 
 void ofApp::createEmitters() 
-	{
+{
 	auto snowEmitter = std::make_shared<ParticleEmitter>((float)15 * 0.45f, 1000, 0.001);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(300, 5, 300, 0));
