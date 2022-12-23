@@ -40,6 +40,7 @@ void ofApp::createEmitters()
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(10, 5, 10, 0));
 		posGenerator->pos = glm::vec4{ 0.0, floor_level, 0.0, 0.0 };
+		posGenerator->color = ofColor::orangeRed;
 		flameEmitter->init_velocity_range[0] = glm::vec4(-0.1, 0.25, -0.1, 0);
 		flameEmitter->init_velocity_range[1] = glm::vec4(0.1, 0.7, 0.1, 0);
 		flameEmitter->addGenerator(posGenerator);
