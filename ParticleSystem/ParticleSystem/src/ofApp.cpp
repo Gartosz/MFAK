@@ -28,36 +28,56 @@ void ofApp::draw() {
 
 void ofApp::createEmitters() 
 {
-	auto snowEmitter = std::make_shared<ParticleEmitter>((float)8, 1000, 0.001);
+	auto snow_emitter = std::make_shared<ParticleEmitter>((float)7, 1000, 0.001);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(300, 5, 300, 0));
 		posGenerator->pos = glm::vec4{ 0.0, 200.0, 0.0, 0.0 };
-		snowEmitter->addGenerator(posGenerator);
+		snow_emitter->addGenerator(posGenerator);
 	}
 
-	system.addEmitter(snowEmitter);
+	system.addEmitter(snow_emitter);
 
-	auto flameEmitter = std::make_shared<ParticleEmitter>((float)1, 500, 0.002);
+	auto flame_emitter = std::make_shared<ParticleEmitter>((float)1, 500, 0.002);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(10, 5, 10, 0));
 		posGenerator->pos = glm::vec4{ 0.0, floor_level, 0.0, 0.0 };
 		posGenerator->color = ofColor::orangeRed;
-		flameEmitter->init_velocity_range[0] = glm::vec4(-0.15, 0.25, -0.15, 0);
-		flameEmitter->init_velocity_range[1] = glm::vec4(0.15, 0.8, 0.15, 0);
-		flameEmitter->addGenerator(posGenerator);
+		flame_emitter->init_velocity_range[0] = glm::vec4(-0.15, 0.25, -0.15, 0);
+		flame_emitter->init_velocity_range[1] = glm::vec4(0.15, 0.8, 0.15, 0);
+		flame_emitter->addGenerator(posGenerator);
 	}
 
-	system.addEmitter(flameEmitter);
+	system.addEmitter(flame_emitter);
 
-	auto smokeEmitter = std::make_shared<ParticleEmitter>((float)1, 600, 0.0001);
+	auto smoke_emitter = std::make_shared<ParticleEmitter>((float)1, 600, 0.0001);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(7, 5, 7, 0));
 		posGenerator->pos = glm::vec4{ 0.0, floor_level + 20, 0.0, 0.0 };
 		posGenerator->color = ofColor::dimGrey;
-		smokeEmitter->init_velocity_range[0] = glm::vec4(-0.2, 0.15, -0.2, 0);
-		smokeEmitter->init_velocity_range[1] = glm::vec4(0.2, 0.3, 0.2, 0);
-		smokeEmitter->addGenerator(posGenerator);
+		smoke_emitter->init_velocity_range[0] = glm::vec4(-0.2, 0.15, -0.2, 0);
+		smoke_emitter->init_velocity_range[1] = glm::vec4(0.2, 0.3, 0.2, 0);
+		smoke_emitter->addGenerator(posGenerator);
 	}
 
-	system.addEmitter(smokeEmitter);
+	system.addEmitter(smoke_emitter);
+
+	auto glittering_emitter1 = std::make_shared<ParticleEmitter>((float)1, 100);
+	{
+		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(15, 50, 10, 0));
+		posGenerator->pos = glm::vec4{ 100.0, floor_level + 50.0, 0, 0.0 };
+		posGenerator->color = ofColor::yellow;
+		glittering_emitter1->addGenerator(posGenerator);
+	}
+
+	system.addEmitter(glittering_emitter1);
+
+	auto glittering_emitter2 = std::make_shared<ParticleEmitter>((float)1, 100);
+	{
+		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(15, 50, 10, 0));
+		posGenerator->pos = glm::vec4{ -100.0, floor_level + 50.0, 0, 0.0 };
+		posGenerator->color = ofColor::yellow;
+		glittering_emitter2->addGenerator(posGenerator);
+	}
+
+	system.addEmitter(glittering_emitter2);
 }
