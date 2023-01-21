@@ -28,7 +28,7 @@ void ofApp::draw() {
 
 void ofApp::createEmitters() 
 {
-	auto snow_emitter = std::make_shared<ParticleEmitter>((float)7, 1000, 0.001);
+	auto snow_emitter = std::make_shared<ParticleEmitter>((float)3, 1000, 0.001);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(300, 5, 300, 0));
 		posGenerator->pos = glm::vec4{ 0.0, 200.0, 0.0, 0.0 };
@@ -37,7 +37,7 @@ void ofApp::createEmitters()
 
 	system.addEmitter(snow_emitter);
 
-	auto flame_emitter = std::make_shared<ParticleEmitter>((float)1, 500, 0.002);
+	/*auto flame_emitter = std::make_shared<ParticleEmitter>((float)1, 500, 0.002);
 	{
 		auto posGenerator = std::make_shared<BoxPosGen>(glm::vec4(10, 5, 10, 0));
 		posGenerator->pos = glm::vec4{ 0.0, floor_level, 0.0, 0.0 };
@@ -79,5 +79,5 @@ void ofApp::createEmitters()
 		glittering_emitter2->addGenerator(posGenerator);
 	}
 
-	system.addEmitter(glittering_emitter2);
+	system.addEmitter(glittering_emitter2);*/
 }

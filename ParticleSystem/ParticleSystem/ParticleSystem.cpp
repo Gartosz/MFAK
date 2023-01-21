@@ -57,6 +57,7 @@ void ParticleSystem::update(double dt)
     for (int i = 0; i < data.last_alive_id; ++i)
     {   
         data.particles[i].velocity.y -= data.particles[i].gravity * dt;
+        data.particles[i].velocity += glm::vec4(glm::linearRand(-0.01, 0.01), 0, glm::linearRand(-0.01, 0.01), 0);
         data.particles[i].pos += data.particles[i].velocity * dt;
         data.particles[i].pos.y = max(data.particles[i].pos.y, floor_level);
         if ((data.particles[i].time_to_live -= dt) <= 0)
