@@ -11,8 +11,15 @@ void ofApp::update(){
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
-
+void ofApp::draw()
+{
+	for (auto& vec : springs)
+	{
+		for (auto& spring : vec)
+		{
+			ofDrawLine(spring.coordinates[0], spring.coordinates[1]);
+		}
+	}
 }
 
 void ofApp::generate_springs()
