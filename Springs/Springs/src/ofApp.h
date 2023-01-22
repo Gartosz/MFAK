@@ -1,10 +1,16 @@
 #pragma once
 
 #include "ofMain.h"
+#include "../Spring.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
+		ofApp()
+		{
+			generate_springs();
+		}
+
 		void setup();
 		void update();
 		void draw();
@@ -20,5 +26,9 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+private:
+	std::vector<std::vector<Spring>> springs;
+	void generate_springs();
 		
 };
