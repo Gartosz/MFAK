@@ -57,7 +57,13 @@ void ParticleSystem::update(double dt)
     for (int i = 0; i < data.last_alive_id; ++i)
     {   
         data.particles[i].velocity.y -= data.particles[i].gravity * dt;
-        data.particles[i].velocity += glm::vec4(glm::linearRand(-0.01, 0.01), 0, glm::linearRand(-0.01, 0.01), 0);
+        std::vector<glm::vec2> velocity_range = *data.particles[i].velocity_range;
+        glm::vec4 additional_velocity { 0.0 };
+        for (int i = 0; i < velocity_range.size(); ++i)
+        {
+            additional_velocity[i] = ParticleSystem::linearRand(velocity_range[i]);
+        }
+        data.particles[i].velocity += additional_velocity;
         data.particles[i].pos += data.particles[i].velocity * dt;
         data.particles[i].pos.y = max(data.particles[i].pos.y, floor_level);
         if ((data.particles[i].time_to_live -= dt) <= 0)
