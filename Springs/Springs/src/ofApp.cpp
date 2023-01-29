@@ -13,6 +13,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw()
 {
+	camera.begin();
 	for (auto& vec : springs)
 	{
 		for (auto& spring : vec)
@@ -20,6 +21,7 @@ void ofApp::draw()
 			ofDrawLine(spring.coordinates[0], spring.coordinates[1]);
 		}
 	}
+	camera.end();
 }
 
 void ofApp::generate_springs()

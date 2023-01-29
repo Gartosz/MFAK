@@ -28,6 +28,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 private:
+	ofEasyCam camera;
 	std::vector<std::vector<Spring>> springs;
 	void generate_springs();
 		
