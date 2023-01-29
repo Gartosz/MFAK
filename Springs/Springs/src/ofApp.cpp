@@ -16,6 +16,7 @@ void ofApp::draw()
 	camera.begin();
 	for (int y = 0; y < system.coordinates.size(); ++y)
 	{
+		ofDrawCircle(system.coordinates[y][1], system.coordinates[y][0], system.size);
 		for (int x = 1; x < system.coordinates[y].size() - 1; ++x)
 		{
 			ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y][0]);
@@ -27,6 +28,7 @@ void ofApp::draw()
 					ofDrawLine(system.coordinates[y][x + 1], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y + 1][0]);
 			}
 		}
+		std::cout << "\n";
 	}
 	camera.end();
 }
