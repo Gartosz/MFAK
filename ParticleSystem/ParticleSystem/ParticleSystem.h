@@ -91,4 +91,5 @@ public:
 	}
 	void addEmitter(std::shared_ptr<ParticleEmitter> em) { emitters.push_back(em); }
 	void update(double dt);
+	static float linearRand(glm::vec2 values_range);
 };

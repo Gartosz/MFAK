@@ -64,3 +64,8 @@ void ParticleSystem::update(double dt)
             data.kill(i);
     }
 }
+
+float ParticleSystem::linearRand(glm::vec2 values_range)
+{
+    return glm::linearRand(values_range[0], values_range[1]);
+}
