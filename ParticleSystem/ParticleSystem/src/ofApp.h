@@ -4,8 +4,8 @@
 #include <vector>
 #include <ctime>
 #include <stdio.h>
-#include "../ParticleSystem.h"
-#include "../ParticleGenerators.h"
+#include "ParticleSystem.h"
+#include "ParticleGenerators.h"
 
 class ofApp : public ofBaseApp{
 
