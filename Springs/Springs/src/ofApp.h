@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "../Spring.h"
+#include "SpringsSystem.h"
 
 class ofApp : public ofBaseApp{
 
@@ -29,7 +29,7 @@ class ofApp : public ofBaseApp{
 
 private:
 	ofEasyCam camera;
-	std::vector<std::vector<Spring>> springs;
+	std::vector<std::vector<SpringsSystem>> springs;
 	void generate_springs();
 		
 };
