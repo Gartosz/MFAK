@@ -14,11 +14,17 @@ void ofApp::update(){
 void ofApp::draw()
 {
 	camera.begin();
-	for (auto& vec : springs)
+	for (int y = 0; y < system.coordinates.size(); ++y)
 	{
-		for (auto& spring : vec)
+		for (int x = 1; x < system.coordinates[y].size() - 1; ++x)
 		{
-			ofDrawLine(spring.coordinates[0], spring.coordinates[1]);
+			ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x+1], system.coordinates[y][0]);
+			if (y != system.coordinates.size() - 1)
+			{
+				ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x], system.coordinates[y + 1][0]);
+				if (x == system.coordinates[y].size() - 2)
+					ofDrawLine(system.coordinates[y][x + 1], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y + 1][0]);
+			}
 		}
 	}
 	camera.end();
