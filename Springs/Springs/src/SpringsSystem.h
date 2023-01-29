@@ -14,7 +14,7 @@ public:
 		size = _size;
 		k = _k;
 	}
-	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3, , float _k = 0.5)
+	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3, float _k = 0.5)
 	{
 		for (int y = 0; y <= y_count; ++y)
 		{

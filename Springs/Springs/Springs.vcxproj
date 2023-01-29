@@ -180,11 +180,13 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Spring.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\SpringsSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Spring.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\SpringsSystem.h" />
   </ItemGroup>
