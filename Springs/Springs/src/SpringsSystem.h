@@ -6,13 +6,15 @@ class SpringsSystem
 public:
 	std::vector<std::vector<float>> coordinates;
 	int size = 0;
+	float k = 0;
 	SpringsSystem() {}
-	SpringsSystem(std::vector<std::vector<float>> const &positions, const int &_size = 3)
+	SpringsSystem(std::vector<std::vector<float>> const &positions, const int &_size = 3, float _k = 0.5)
 	{
 		coordinates = positions;
 		size = _size;
+		k = _k;
 	}
-	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3)
+	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3, , float _k = 0.5)
 	{
 		for (int y = 0; y <= y_count; ++y)
 		{
@@ -22,5 +24,6 @@ public:
 				coordinates[y].emplace_back(x * x_length);
 		}
 		size = _size;
+		k = _k;
 	}
 };
