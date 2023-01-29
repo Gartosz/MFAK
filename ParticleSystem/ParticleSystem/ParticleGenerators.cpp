@@ -17,3 +17,11 @@ void BoxPosGen::generate(double dt, ParticleData* p, size_t start_index, size_t 
         p->particles[i].color = color;
     }
 }
+
+void VelocityRangeGen::generate(double dt, ParticleData* p, size_t start_index, size_t end_index)
+{
+    for (size_t i = start_index; i < end_index; ++i)
+    {
+        p->particles[i].velocity_range = velocity_range;
+    }
+}
