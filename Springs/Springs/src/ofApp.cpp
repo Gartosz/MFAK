@@ -18,7 +18,8 @@ void ofApp::draw()
 	{
 		for (int x = 1; x < system.coordinates[y].size() - 1; ++x)
 		{
-			ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x+1], system.coordinates[y][0]);
+			ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y][0]);
+			ofDrawCircle(system.coordinates[y][x + 1], system.coordinates[y][0], system.size);
 			if (y != system.coordinates.size() - 1)
 			{
 				ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x], system.coordinates[y + 1][0]);
