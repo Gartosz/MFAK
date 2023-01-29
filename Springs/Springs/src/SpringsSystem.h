@@ -4,10 +4,10 @@
 class SpringsSystem
 {
 public:
-	std::vector<std::vector<ofPoint>> coordinates;
+	std::vector<std::vector<float>> coordinates;
 
 	SpringsSystem() {}
-	SpringsSystem(std::vector<std::vector<ofPoint>> const &positions)
+	SpringsSystem(std::vector<std::vector<float>> const &positions)
 	{
 		coordinates = positions;
 	}
@@ -15,9 +15,11 @@ public:
 	{
 		for (int y = 0; y < y_count; ++y)
 		{
-			coordinates.emplace_back(ofPoint(y * y_length, y * y_length + y_length));
+			coordinates.emplace_back();
+			coordinates[y].emplace_back(y * y_length);
+			coordinates[y].emplace_back(0);
 			for (int x = 0; x < x_count; ++x)
-				coordinates[y].emplace_back(ofPoint(x * x_length, x * x_length + x_length));
+				coordinates[y].emplace_back(x * x_length);
 		}
 	}
 };
