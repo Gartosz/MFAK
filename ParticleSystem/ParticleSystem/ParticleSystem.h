@@ -1,6 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include <vector>
+#include <memory>
 
 class ParticleData
 {
@@ -20,7 +21,7 @@ public:
 		int size = 1;
 		glm::vec4 pos = glm::vec4(0.0f);
 		ofColor color = { 255, 255, 255 };
-		float mass = 0;
+		std::shared_ptr<std::vector<glm::vec2>> velocity_range;
 		glm::vec4 velocity = glm::vec4(0.0f);
 		float gravity = 0;
 		bool is_alive = false;
@@ -29,7 +30,7 @@ public:
 		particles_parameters()
 		{
 			size = std::rand() % 2 + 1;
-			mass = ofRandom(20.0, 80.0);
+			velocity_range = std::make_shared<std::vector<glm::vec2>>();
 		}
 	};
 
