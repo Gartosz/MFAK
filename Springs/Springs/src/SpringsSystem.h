@@ -6,6 +6,7 @@ class SpringsSystem
 public:
 	std::vector<std::vector<ofPoint>> coordinates;
 
+	SpringsSystem() {}
 	SpringsSystem(std::vector<std::vector<ofPoint>> const &positions)
 	{
 		coordinates = positions;

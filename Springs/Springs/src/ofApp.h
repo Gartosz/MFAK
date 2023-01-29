@@ -8,7 +8,7 @@ class ofApp : public ofBaseApp{
 	public:
 		ofApp()
 		{
-			generate_springs();
+			system = SpringsSystem{10, 10, 30, 50};
 		}
 
 		void setup();
@@ -29,7 +29,6 @@ class ofApp : public ofBaseApp{
 
 private:
 	ofEasyCam camera;
-	std::vector<std::vector<SpringsSystem>> springs;
-	void generate_springs();
+	SpringsSystem system;
 		
 };

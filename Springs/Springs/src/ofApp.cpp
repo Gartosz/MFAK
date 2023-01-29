@@ -24,16 +24,6 @@ void ofApp::draw()
 	camera.end();
 }
 
-void ofApp::generate_springs()
-{
-	springs.emplace_back();
-	for (int i = 0; i < 10; ++i)
-	{
-		ofPoint coordinates[2] = {ofPoint(0, i*20, 0), ofPoint(0, i*20 + 20, 0)};
-		springs[0].push_back(coordinates);
-	}
-}
-
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 
