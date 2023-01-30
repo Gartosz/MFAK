@@ -10,7 +10,7 @@
     <ClCompile Include="src\SpringsSystem.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Spring.cpp">
+    <ClCompile Include="src\Spring.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +26,7 @@
     <ClInclude Include="src\SpringsSystem.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Spring.h">
+    <ClInclude Include="src\Spring.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

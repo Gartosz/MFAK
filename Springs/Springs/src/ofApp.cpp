@@ -14,21 +14,12 @@ void ofApp::update(){
 void ofApp::draw()
 {
 	camera.begin();
-	for (int y = 0; y < system.coordinates.size(); ++y)
+	for (int y = 0; y < system.spring_points.size(); ++y)
 	{
-		ofDrawCircle(system.coordinates[y][1], system.coordinates[y][0], system.size);
-		for (int x = 1; x < system.coordinates[y].size() - 1; ++x)
+		for (int x = 0; x < system.spring_points[y].size(); ++x)
 		{
-			ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y][0]);
-			ofDrawCircle(system.coordinates[y][x + 1], system.coordinates[y][0], system.size);
-			if (y != system.coordinates.size() - 1)
-			{
-				ofDrawLine(system.coordinates[y][x], system.coordinates[y][0], system.coordinates[y][x], system.coordinates[y + 1][0]);
-				if (x == system.coordinates[y].size() - 2)
-					ofDrawLine(system.coordinates[y][x + 1], system.coordinates[y][0], system.coordinates[y][x + 1], system.coordinates[y + 1][0]);
-			}
+			ofDrawCircle(system.spring_points[y][x].pos, system.size);
 		}
-		std::cout << "\n";
 	}
 	camera.end();
 }
