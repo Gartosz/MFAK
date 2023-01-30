@@ -13,6 +13,10 @@ public:
 	{
 		length = (*point1).pos.distance((*point2).pos);
 	}
+	void update(float ks, float kd);
+
+private:
+	void Spring::calculateRestoringForce(float ks, float kd);
 	
 };
 
