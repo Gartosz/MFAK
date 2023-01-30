@@ -23,7 +23,7 @@ void SpringsSystem::generateSprings()
 			{
 				springs.emplace_back(spring_points[y][x * 2].pos, spring_points[y + 1][x * 2].pos);
 				springs.emplace_back(spring_points[y][x * 2 + 1].pos, spring_points[y + 1][x * 2 + 1].pos);
-				if (x * 2 + 2 >= spring_points[y].size())
+				if (x * 2 + 3 >= spring_points[y].size())
 					springs.emplace_back(spring_points[y][x * 2 + 2].pos, spring_points[y + 1][x * 2 + 2].pos);
 			}
 		}
