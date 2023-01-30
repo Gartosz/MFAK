@@ -182,12 +182,12 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
-    <ClCompile Include="src\Spring.cpp" />
+    <ClCompile Include="src\Point.cpp" />
     <ClCompile Include="src\SpringsSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h" />
-    <ClInclude Include="src\Spring.h" />
+    <ClInclude Include="src\Point.h" />
     <ClInclude Include="src\SpringsSystem.h" />
   </ItemGroup>
   <ItemGroup>

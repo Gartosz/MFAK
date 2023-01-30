@@ -1,11 +1,11 @@
 #pragma once
 #include "ofMain.h"
-#include "Spring.h"
+#include "Point.h"
 
 class SpringsSystem
 {
 public:
-	std::vector<std::vector<Spring>> spring_points;
+	std::vector<std::vector<Point>> spring_points;
 	int size = 0;
 	float k = 0;
 	SpringsSystem() {}
