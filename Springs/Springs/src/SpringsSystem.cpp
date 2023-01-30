@@ -6,7 +6,7 @@ void SpringsSystem::generatePoints(const int& y_count, const int& x_count, const
 	{
 		spring_points.emplace_back();
 		for (int x = 0; x <= x_count; ++x)
-			spring_points[y].emplace_back(Point(ofPoint(x * x_length, y * y_length)));
+			spring_points[y].emplace_back(std::make_shared<Point>(Point(ofPoint(x * x_length, y * y_length))));
 	}
 }
 
@@ -16,15 +16,15 @@ void SpringsSystem::generateSprings()
 	{
 		for (int x = 0; x < spring_points[y].size()/2; ++x)
 		{
-			springs.emplace_back( spring_points[y][x * 2].pos, spring_points[y][x * 2 + 1].pos);
+			springs.emplace_back( spring_points[y][x * 2], spring_points[y][x * 2 + 1]);
 			if (x * 2 + 2 < spring_points[y].size())
-				springs.emplace_back(spring_points[y][x * 2 + 1].pos, spring_points[y][x * 2 + 2].pos);
+				springs.emplace_back(spring_points[y][x * 2 + 1], spring_points[y][x * 2 + 2]);
 			if (y + 1 < spring_points.size())
 			{
-				springs.emplace_back(spring_points[y][x * 2].pos, spring_points[y + 1][x * 2].pos);
-				springs.emplace_back(spring_points[y][x * 2 + 1].pos, spring_points[y + 1][x * 2 + 1].pos);
+				springs.emplace_back(spring_points[y][x * 2], spring_points[y + 1][x * 2]);
+				springs.emplace_back(spring_points[y][x * 2 + 1], spring_points[y + 1][x * 2 + 1]);
 				if (x * 2 + 3 >= spring_points[y].size())
-					springs.emplace_back(spring_points[y][x * 2 + 2].pos, spring_points[y + 1][x * 2 + 2].pos);
+					springs.emplace_back(spring_points[y][x * 2 + 2], spring_points[y + 1][x * 2 + 2]);
 			}
 		}
 	}
@@ -42,7 +42,7 @@ void SpringsSystem::drawCircles()
 	{
 		for (int x = 0; x < spring_points[y].size(); ++x)
 		{
-			ofDrawCircle(spring_points[y][x].pos, size);
+			ofDrawCircle((*spring_points[y][x]).pos, size);
 		}
 	}
 }
@@ -50,5 +50,5 @@ void SpringsSystem::drawCircles()
 void SpringsSystem::drawLines()
 {
 	for (auto& spring : springs)
-		ofDrawLine(spring.coordinates.first, spring.coordinates.second);
+		ofDrawLine((*spring.vertexes.first).pos, (*spring.vertexes.second).pos);
 }

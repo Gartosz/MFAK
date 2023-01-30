@@ -6,7 +6,7 @@
 class SpringsSystem
 {
 public:
-	std::vector<std::vector<Point>> spring_points;
+	std::vector<std::vector<std::shared_ptr<Point>>> spring_points;
 	std::vector<Spring> springs;
 	int size = 0;
 	float k = 0;

@@ -1,14 +1,15 @@
 #pragma once
 #include "ofMain.h"
+#include "Point.h"
 
 class Spring
 {
 public:
-	std::pair<ofPoint, ofPoint> coordinates;
+	std::pair<std::shared_ptr<Point>, std::shared_ptr<Point>> vertexes;
 	Spring() {}
-	Spring(ofPoint pos1, ofPoint pos2)
+	Spring(std::shared_ptr<Point> point1, std::shared_ptr<Point> point2)
 	{
-		coordinates = std::pair<ofPoint, ofPoint>(pos1, pos2);
+		vertexes = std::pair <std::shared_ptr<Point>, std::shared_ptr<Point>>(point1, point2);
 	}
 	
 };
