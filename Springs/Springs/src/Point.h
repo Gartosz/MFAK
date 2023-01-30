@@ -4,7 +4,8 @@
 class Point
 {
 public:
-	glm::vec2 velocity;
+	ofVec3f velocity;
+	ofVec3f force;
 	ofPoint pos;
 	ofPoint prev_pos;
 	float mass = 0;
