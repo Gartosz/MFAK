@@ -33,6 +33,7 @@ void SpringsSystem::generateSprings()
 void SpringsSystem::draw()
 {
 	drawCircles();
+	drawLines();
 }
 
 void SpringsSystem::drawCircles()
@@ -43,5 +44,11 @@ void SpringsSystem::drawCircles()
 		{
 			ofDrawCircle(spring_points[y][x].pos, size);
 		}
+	}
 }
+
+void SpringsSystem::drawLines()
+{
+	for (auto& spring : springs)
+		ofDrawLine(spring.coordinates.first, spring.coordinates.second);
 }
