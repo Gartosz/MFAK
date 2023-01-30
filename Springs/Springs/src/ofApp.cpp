@@ -14,13 +14,7 @@ void ofApp::update(){
 void ofApp::draw()
 {
 	camera.begin();
-	for (int y = 0; y < system.spring_points.size(); ++y)
-	{
-		for (int x = 0; x < system.spring_points[y].size(); ++x)
-		{
-			ofDrawCircle(system.spring_points[y][x].pos, system.size);
-		}
-	}
+	system.draw();
 	camera.end();
 }
 

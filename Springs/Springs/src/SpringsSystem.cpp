@@ -29,3 +29,19 @@ void SpringsSystem::generateSprings()
 		}
 	}
 }
+
+void SpringsSystem::draw()
+{
+	drawCircles();
+}
+
+void SpringsSystem::drawCircles()
+{
+	for (int y = 0; y < spring_points.size(); ++y)
+	{
+		for (int x = 0; x < spring_points[y].size(); ++x)
+		{
+			ofDrawCircle(spring_points[y][x].pos, size);
+		}
+}
+}
