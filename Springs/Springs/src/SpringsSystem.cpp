@@ -9,3 +9,8 @@ void SpringsSystem::generatePoints(const int& y_count, const int& x_count, const
 			spring_points[y].emplace_back(Point(ofPoint(x * x_length, y * y_length)));
 	}
 }
+
+void SpringsSystem::generateSprings()
+{
+
+}

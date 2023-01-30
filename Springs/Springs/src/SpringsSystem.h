@@ -1,6 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "Point.h"
+#include "Spring.h"
 
 class SpringsSystem
 {
@@ -17,4 +18,5 @@ public:
 	}
 private:
 	void generatePoints(const int& y_count, const int& x_count, const int& x_length, const int& y_length);
+	void generateSprings();
 };
