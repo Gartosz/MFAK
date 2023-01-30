@@ -6,11 +6,6 @@
 class ofApp : public ofBaseApp{
 
 	public:
-		ofApp()
-		{
-			system = SpringsSystem{10, 10, 30, 50};
-		}
-
 		void setup();
 		void update();
 		void draw();
@@ -29,6 +24,5 @@ class ofApp : public ofBaseApp{
 
 private:
 	ofEasyCam camera;
-	SpringsSystem system;
-		
+	SpringsSystem system{10, 10, 30, 50};
 };
