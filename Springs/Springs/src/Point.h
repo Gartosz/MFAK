@@ -11,6 +11,6 @@ public:
 	float mass = 0;
 	Point() {}
 	Point(ofPoint _pos, float _mass = 30)
-		: pos(_pos), prev_pos(_pos), mass(_mass) {}
+		: pos(_pos), prev_pos(_pos), mass(_mass) {}	
 	void update(const ofVec3f &gravity, const float &dt);
 };
