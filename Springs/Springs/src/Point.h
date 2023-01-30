@@ -7,13 +7,9 @@ public:
 	glm::vec2 velocity;
 	ofPoint pos;
 	ofPoint prev_pos;
-	float mass;
+	float mass = 0;
 	Point() {}
-	Point(ofPoint _pos, float _mass = 10)
-	{
-		velocity = glm::vec2{ 0.0 };
-		pos = _pos;
-		prev_pos = pos;
-		mass = _mass;
-	}
+	Point(ofPoint _pos, float _mass = 30)
+		: pos(_pos), prev_pos(_pos), mass(_mass) {}
+
 };
