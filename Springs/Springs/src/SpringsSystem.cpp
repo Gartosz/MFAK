@@ -50,7 +50,7 @@ void SpringsSystem::drawCircles()
 void SpringsSystem::drawLines()
 {
 	for (auto& spring : springs)
-		ofDrawLine((*spring.vertexes.first).pos, (*spring.vertexes.second).pos);
+		ofDrawLine(spring.vertices.first->pos, spring.vertices.second->pos);
 }
 
 void SpringsSystem::update()
