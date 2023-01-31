@@ -26,6 +26,7 @@ public:
 	void draw();
 	void drawCircles();
 	void drawLines();
+	void update();
 private:
 	void generatePoints(const int& y_count, const int& x_count, const int& x_length, const int& y_length);
 	void generateSprings();

@@ -52,3 +52,17 @@ void SpringsSystem::drawLines()
 	for (auto& spring : springs)
 		ofDrawLine((*spring.vertexes.first).pos, (*spring.vertexes.second).pos);
 }
+
+void SpringsSystem::update()
+{
+	for (auto& spring : springs)
+		spring.update(ks, kd);
+
+	for (int y = 1; y <= spring_points.size(); ++y)
+	{
+		for (int x = 0; x <= spring_points[y].size(); ++x)
+		{
+			spring_points[y][x]->update(g, dt);
+		}
+	}
+}
