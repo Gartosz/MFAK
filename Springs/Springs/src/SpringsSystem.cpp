@@ -58,9 +58,9 @@ void SpringsSystem::update()
 	for (auto& spring : springs)
 		spring.update(ks, kd);
 
-	for (int y = 1; y <= spring_points.size(); ++y)
+	for (int y = 1; y < spring_points.size(); ++y)
 	{
-		for (int x = 0; x <= spring_points[y].size(); ++x)
+		for (int x = 0; x < spring_points[y].size(); ++x)
 		{
 			spring_points[y][x]->update(g, dt);
 		}
