@@ -3,5 +3,7 @@
 void Point::update(const ofVec3f& gravity, const float& dt)
 {
 	force += gravity;
-	pos = 2 * pos - prev_pos + (force / mass) * dt * dt;
+	ofVec3f tmp = prev_pos;
+	prev_pos = pos;
+	pos = 2 * pos - tmp + (force / mass) * dt * dt;
 }
