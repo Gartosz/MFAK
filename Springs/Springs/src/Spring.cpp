@@ -13,7 +13,7 @@ void Spring::calculateRestoringForce(float ks, float kd)
 	{
 		ofVec3f distance_vector = vertices.first->pos - vertices.second->pos;
 		ofVec3f velocity_difference = vertices.first->velocity - vertices.second->velocity;
-		ofVec3f force = (actual_distance - length) * ks + velocity_difference * distance_vector * kd / actual_distance;
+		ofVec3f force = (distance_vector / actual_distance) * ((actual_distance - length) * ks + velocity_difference.dot(distance_vector) * kd / actual_distance);
 
 		vertices.first->force -= force;
 		vertices.second->force += force;
