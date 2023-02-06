@@ -8,8 +8,8 @@ void SpringsSystem::generatePoints(const int& y_count, const int& x_count, const
 		for (int x = 0; x <= x_count; ++x)
 		{
 			spring_points[y].emplace_back(std::make_shared<Point>(Point(ofPoint(x * x_length, y * y_length))));
+		}
 	}
-}
 }
 
 void SpringsSystem::generateSprings()
@@ -64,7 +64,7 @@ void SpringsSystem::update()
 	{
 		for (int x = 0; x < spring_points[y].size(); ++x)
 		{
-			spring_points[y][x]->update(g, dt);
+			spring_points[y][x]->update(g, wind, dt);
 		}
 	}
 }
