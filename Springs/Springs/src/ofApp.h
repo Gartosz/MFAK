@@ -13,6 +13,6 @@ class ofApp : public ofBaseApp{
 
 private:
 	ofEasyCam camera;
-	SpringsSystem system{ 50, 70, 2, 2 };
+	SpringsSystem system{ 50, 70, 5, 5 };
 	ofxPanel gui;
 };
