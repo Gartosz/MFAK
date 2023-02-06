@@ -2,6 +2,7 @@
 #include "ofMain.h"
 #include "Point.h"
 #include "Spring.h"
+#include "ofxGui.h"
 
 class SpringsSystem
 {
@@ -9,10 +10,11 @@ public:
 	std::vector<std::vector<std::shared_ptr<Point>>> spring_points;
 	std::vector<Spring> springs;
 	int size = 0;
-	float ks = 0;
-	float kd = 0;
-	float dt = 0;
-	const ofVec3f g = ofVec3f(0, - 9.81, 0);
+	ofxFloatSlider ks = 0;
+	ofxFloatSlider kd = 0;
+	ofxFloatSlider dt = 1;
+	ofxFloatSlider g = -1;
+	ofxVec3Slider wind;
 	SpringsSystem() {}
 	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3, float _ks = 100, float _kd = 25, float _dt = 1)
 	{
