@@ -1,6 +1,5 @@
 #include "ofApp.h"
 
-//--------------------------------------------------------------
 void ofApp::setup(){
 	camera.setGlobalPosition({ 0, 40, 0 });
 	camera.setTarget({ 50, 0, 10 });
@@ -14,71 +13,14 @@ void ofApp::setup(){
 	gui.add(system.wind.setup("Wind", glm::vec3{0, 0, 0.2}, glm::vec3{-5, -5, -5}, glm::vec3{5, 5, 5}));
 }
 
-//--------------------------------------------------------------
 void ofApp::update(){
 	system.update();
 }
 
-//--------------------------------------------------------------
 void ofApp::draw()
 {
 	camera.begin();
 	system.draw();
 	camera.end();
 	gui.draw();
-}
-
-//--------------------------------------------------------------
-void ofApp::keyPressed(int key){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
 }
