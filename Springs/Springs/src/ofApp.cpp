@@ -16,6 +16,7 @@ void ofApp::draw()
 	camera.begin();
 	system.draw();
 	camera.end();
+	gui.draw();
 }
 
 //--------------------------------------------------------------

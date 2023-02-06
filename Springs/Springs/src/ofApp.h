@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "SpringsSystem.h"
+#include "ofXGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -25,4 +26,5 @@ class ofApp : public ofBaseApp{
 private:
 	ofEasyCam camera;
 	SpringsSystem system{10, 10, 30, 50};
+	ofxPanel gui;
 };
