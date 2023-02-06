@@ -16,14 +16,11 @@ public:
 	ofxFloatSlider g = -1;
 	ofxVec3Slider wind;
 	SpringsSystem() {}
-	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int &_size = 3, float _ks = 100, float _kd = 25, float _dt = 1)
+	SpringsSystem(const int &x_count, const int &y_count, const int &x_length, const int y_length, const int& _size = 1)
 	{
 		generatePoints(y_count, x_count, x_length, y_length);
 		generateSprings();
 		size = _size;
-		ks = _ks;
-		kd = _kd;
-		dt = _dt;
 	}
 	void draw();
 	void drawCircles();
